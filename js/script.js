@@ -266,3 +266,17 @@ const body = document.body
     dialogs.forEach((item) => item.close())
   })
 })()
+
+// 購物車彈窗 單場/串關切換
+;(()=>{
+  const tabs = document.querySelectorAll('#titleTopNavOptions li')
+  tabs.forEach((tab,index)=>{
+    tab.addEventListener('click',function(){
+      tabs.forEach(item=>item.classList.remove('active'))
+      tab.classList.add('active')
+      const content = document.querySelectorAll('dialog.cart .content')
+      content.forEach(item=>item.classList.remove('display'))
+      content[index].classList.add('display')
+    })
+  })
+})()

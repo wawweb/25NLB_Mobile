@@ -129,6 +129,18 @@
             }
             &.list {
               margin-bottom: 1vw;
+              .item.active{
+                .num{
+                  .down.triangle{
+                    &::before {
+                      transition: all .5s;
+                      background: linear-gradient(45deg, transparent 50%, var(--sec-dark) 50%);
+                      transform: rotate(-45deg);
+                      bottom: 0%;
+                    }
+                  }
+                }
+              }
             }
           }
         }

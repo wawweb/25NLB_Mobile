@@ -336,6 +336,37 @@ dialog .fav.active, dialog .fav:active {
   background: url("../img/svg/icon_news_fff.svg") no-repeat;
 }
 
+.loadingPg .loading {
+  background: url("../img/svg/img_loading.png") no-repeat center/contain;
+  width: 10.5vw;
+  height: 10.5vw;
+  -webkit-animation: spin 0.6s linear infinite;
+          animation: spin 0.6s linear infinite;
+}
+[theme=dark] .loadingPg .loading {
+  background: url("../img/svg/img_loading_dark.png") no-repeat center/contain;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 footer {
   width: 100%;
   position: fixed;
@@ -1549,7 +1580,7 @@ main.settingPage .settings li > i:last-child,
 main.settingPage .settings a > i:last-child {
   color: var(--gray2);
   width: 11.2vw;
-  font-size: 3.2vw;
+  font-size: 4.2vw;
   text-align: center;
   pointer-events: none;
 }
@@ -1911,6 +1942,14 @@ main.settingInnerPage section.post .postItem .content {
 .gamePage .bottom > div.teamList .content > div.list {
   margin-bottom: 1vw;
 }
+.gamePage .bottom > div.teamList .content > div.list .item.active .num .down.triangle::before {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background: linear-gradient(45deg, transparent 50%, var(--sec-dark) 50%);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0%;
+}
 .gamePage .bottom .list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2038,6 +2077,98 @@ main.settingInnerPage section.post .postItem .content {
 }
 [theme=dark] .gamePage .bottom .list .item:active p, [theme=dark] .gamePage .bottom .list .item.active p {
   color: #fff !important;
+}
+
+.errpg {
+  background: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.errpg > i {
+  color: var(--pri);
+  font-size: 21vw;
+}
+.errpg .statusCode {
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  color: var(--pri);
+  font-size: 16vw;
+  font-weight: bold;
+  margin-bottom: 6.4vw;
+}
+.errpg .msg {
+  color: var(--sec-dark);
+  font-size: 4.8vw;
+  font-weight: bold;
+  margin-bottom: 6.4vw;
+}
+.errpg .text {
+  color: var(--black2);
+  font-size: 4.2vw;
+  font-weight: bold;
+  margin-bottom: 8vw;
+}
+.errpg button {
+  color: var(--white);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
+  background: linear-gradient(var(--pri-2), var(--pri));
+  height: 44px;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 260px;
+}
+.errpg button:active, .errpg button.active {
+  background: var(--pri-dark);
+}
+[theme=dark] .errpg.errpg {
+  background: var(--black2);
+}
+[theme=dark] .errpg.errpg .text {
+  color: var(--white);
+}
+
+.loadingPg {
+  background: var(--mask);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  gap: 5vw;
+}
+
+[theme=dark] .loadingPg {
+  background: var(--mask);
 }
 
 dialog {
@@ -2227,7 +2358,30 @@ dialog.cart .content.dataList .cartDetail {
   position: fixed;
   bottom: 0;
 }
+dialog.cart .content.dataList_2 {
+  height: 90vh;
+}
+dialog.cart .content.dataList_2 .cartList {
+  padding-bottom: 78vw;
+}
+dialog.cart .content.dataList_2 .cartDetail {
+  width: 100%;
+  height: 55vw;
+  position: fixed;
+  bottom: 0;
+}
 dialog.tip {
+  bottom: unset;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 2vw;
+  overflow: hidden;
+}
+dialog.directions {
   bottom: unset;
   height: auto;
   top: 50%;
@@ -2260,7 +2414,7 @@ dialog .title__btn {
   position: absolute;
 }
 dialog .title__btn > i {
-  font-size: inherit;
+  font-size: 6.4vw;
 }
 dialog .title__btn--left {
   left: 25px;
@@ -2332,36 +2486,7 @@ dialog .content .optionList li:active, dialog .content .optionList li.active {
 dialog .content .optionList li:active > i, dialog .content .optionList li.active > i {
   opacity: 1;
 }
-dialog .content .dateWrap {
-  background: var(--white);
-  height: 97px;
-  padding-top: 20px;
-  padding-inline: 12px;
-}
-dialog .content .dateWrap__text {
-  color: var(--pri);
-  font-size: 3.7vw;
-  text-align: center;
-}
-dialog .content .dateWrap__section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 3vw;
-}
-dialog .content .dateWrap__section > span {
-  color: var(--black2);
-  font-size: 3.7vw;
-}
 dialog .content .dateWrap__input {
-  background: var(--white);
-  border: 1px solid var(--gray3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2370,25 +2495,33 @@ dialog .content .dateWrap__input {
           align-items: center;
   width: 45%;
   height: 34px;
-  border-radius: 5px;
   position: relative;
 }
-dialog .content .dateWrap__input > i {
+dialog .content .dateWrap__input > button {
   color: var(--pri);
   font-size: 4.2vw;
   position: absolute;
   left: 11px;
 }
-dialog .content .dateWrap__input > i > i {
+dialog .content .dateWrap__input > button > i {
   font-size: inherit;
 }
 dialog .content .dateWrap__input > input {
   color: var(--black2);
+  border: 1px solid var(--gray3);
+  background: var(--white);
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   font-size: 4.2vw;
   padding-left: 37px;
-  border-radius: 0.8vw;
+}
+dialog .content .dateWrap__input > input:focus {
+  border: 1px solid var(--pri);
+}
+dialog .content .dateWrap__input > input.error {
+  color: var(--error);
+  border: 1px solid var(--error);
 }
 dialog .content .operateWrap {
   background: var(--white);
@@ -2449,17 +2582,33 @@ dialog .content .cartList .cartItem {
           box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.1607843137);
   overflow: hidden;
   margin-bottom: 2.6vw;
+  height: 31vw;
 }
 dialog .content .cartList .cartItem > div {
   padding: 2.6vw 3.5vw;
-}
-dialog .content .cartList .cartItem > div.top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+dialog .content .cartList .cartItem > div.num {
+  float: left;
+  height: 70%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 6vw;
+  font-weight: bold;
+  color: #8396d0;
+  padding-right: 0;
+}
+dialog .content .cartList .cartItem > div.top {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 30%;
 }
 dialog .content .cartList .cartItem > div.top .icon {
   display: -webkit-box;
@@ -2491,18 +2640,13 @@ dialog .content .cartList .cartItem > div.top > i {
   color: var(--error);
 }
 dialog .content .cartList .cartItem > div.middle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   font-size: 4.2vw;
   font-weight: bold;
   padding: 2vw 0;
+  height: 40%;
 }
 dialog .content .cartList .cartItem > div.middle div.center {
   text-align: center;
@@ -2516,15 +2660,48 @@ dialog .content .cartList .cartItem > div.middle div.center .vs {
   font-weight: bold;
 }
 dialog .content .cartList .cartItem > div.bottom {
+  height: 30%;
   background: -webkit-gradient(linear, left top, right top, from(var(--pri)), to(var(--pri-2)));
   background: linear-gradient(90deg, var(--pri), var(--pri-2));
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: var(--white);
+}
+dialog .content .carttitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #646ccb;
+  margin-top: 1vw;
+  color: var(--white);
+  padding: 1.6vw;
+  font-size: 4.7vw;
+  font-weight: bold;
+  gap: 2vw;
+  border-radius: 2.6vw 2.6vw 0 0;
+}
+dialog .content .carttitle .num {
+  width: 7vw;
+  height: 7vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: var(--sec-dark);
+  color: var(--black2);
+  border-radius: 2.6vw;
 }
 dialog .content .cartDetail {
   background: var(--white);
@@ -2563,6 +2740,42 @@ dialog .content .cartDetail .detailItem input {
   font-size: 4.2vw;
   font-weight: bold;
   width: 60%;
+}
+dialog .content .cartDetail .detailItem input:focus {
+  border: 1px solid var(--pri);
+}
+dialog .content .cartDetail .detailItem input.error {
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+dialog .content .cartDetail .detailBtn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.5vw 1fr 1.5vw 1fr 1.5vw 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5vw;
+}
+dialog .content .cartDetail .detailBtn button {
+  font-size: 3.7vw;
+  padding: 1.5vw 0;
+  border: 0.2vw solid #9aa0bf;
+  color: #9aa0bf;
+  border-radius: 1.6vw;
+}
+dialog .content .cartDetail .detailBtn button:nth-last-child(-n+2) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+dialog .content .cartDetail .detailBtn button:last-child {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3/5;
+}
+dialog .content .cartDetail .detailBtn button:active, dialog .content .cartDetail .detailBtn button.active {
+  color: var(--white);
+  background: #324fb1;
+  border: none;
 }
 dialog .content .cartDetail .btnBlock {
   display: -webkit-box;
@@ -2641,11 +2854,12 @@ dialog .content .msgWrap {
           align-items: center;
   padding-inline: 20px;
   padding-bottom: 20px;
+  margin: 2vw 0;
 }
 dialog .content .msgWrap > p {
   color: var(--black2);
   line-height: 1.2;
-  padding: 30px 0;
+  padding: 15px 0;
   font-size: 4.5vw;
 }
 dialog .content .msgWrap .btnBox {
@@ -2757,6 +2971,7 @@ dialog .content .msgWrap .btnBox > button:last-child:active, dialog .content .ms
 }
 [theme=dark] dialog .content .dateWrap {
   background: var(--black2);
+  background: var(--black2);
 }
 [theme=dark] dialog .content .dateWrap__text {
   color: var(--gray2);
@@ -2764,15 +2979,13 @@ dialog .content .msgWrap .btnBox > button:last-child:active, dialog .content .ms
 [theme=dark] dialog .content .dateWrap__section > span {
   color: var(--black2);
 }
-[theme=dark] dialog .content .dateWrap__input {
-  background: var(--black2);
-  border: 1px solid var(--unnamed-color-42444d);
-}
 [theme=dark] dialog .content .dateWrap__input > button {
   color: var(--pri);
 }
 [theme=dark] dialog .content .dateWrap__input > input {
   color: var(--white);
+  border: 1px solid var(--unnamed-color-42444d);
+  background: var(--black2);
 }
 [theme=dark] dialog .content .operateWrap {
   background: var(--gray1);
@@ -2816,6 +3029,13 @@ dialog .content .msgWrap .btnBox > button:last-child:active, dialog .content .ms
   color: var(--white);
   background: var(--black2);
   border: 0.2vw solid var(--unnamed-color-42444d);
+}
+[theme=dark] dialog .content .cartDetail .detailItem input:focus {
+  border: 1px solid var(--pri);
+}
+[theme=dark] dialog .content .cartDetail .detailItem input.error {
+  color: var(--error);
+  border: 1px solid var(--error);
 }
 [theme=dark] dialog .content .cartDetail .btnBlock button {
   background: -webkit-gradient(linear, left top, left bottom, from(#1f3fac), to(#3c5edb));

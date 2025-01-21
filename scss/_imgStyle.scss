@@ -68,3 +68,23 @@ dialog {
     background: url("../img/svg/icon_news_fff.svg") no-repeat;
   }
 }
+
+.loadingPg{
+  .loading{
+    background: url("../img/svg/img_loading.png") no-repeat center/contain;
+    width: 10.5vw;
+    height: 10.5vw;
+    animation: spin .6s linear infinite;
+  }
+  [theme="dark"] & .loading{
+    background: url("../img/svg/img_loading_dark.png") no-repeat center/contain;
+  }
+  @keyframes spin {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+}
