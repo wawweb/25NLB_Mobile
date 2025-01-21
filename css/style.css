@@ -2486,7 +2486,36 @@ dialog .content .optionList li:active, dialog .content .optionList li.active {
 dialog .content .optionList li:active > i, dialog .content .optionList li.active > i {
   opacity: 1;
 }
+dialog .content .dateWrap {
+  background: var(--white);
+  height: 97px;
+  padding-top: 20px;
+  padding-inline: 12px;
+}
+dialog .content .dateWrap__text {
+  color: var(--pri);
+  font-size: 3.7vw;
+  text-align: center;
+}
+dialog .content .dateWrap__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3vw;
+}
+dialog .content .dateWrap__section > span {
+  color: var(--black2);
+  font-size: 3.7vw;
+}
 dialog .content .dateWrap__input {
+  background: var(--white);
+  border: 1px solid var(--gray3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2495,26 +2524,25 @@ dialog .content .dateWrap__input {
           align-items: center;
   width: 45%;
   height: 34px;
+  border-radius: 5px;
   position: relative;
 }
-dialog .content .dateWrap__input > button {
+dialog .content .dateWrap__input > i {
   color: var(--pri);
   font-size: 4.2vw;
   position: absolute;
   left: 11px;
 }
-dialog .content .dateWrap__input > button > i {
+dialog .content .dateWrap__input > i > i {
   font-size: inherit;
 }
 dialog .content .dateWrap__input > input {
   color: var(--black2);
-  border: 1px solid var(--gray3);
-  background: var(--white);
   width: 100%;
   height: 100%;
-  border-radius: 5px;
   font-size: 4.2vw;
   padding-left: 37px;
+  border-radius: 0.8vw;
 }
 dialog .content .dateWrap__input > input:focus {
   border: 1px solid var(--pri);
@@ -2809,7 +2837,6 @@ dialog .content .cartDetail .btnBlock button.del {
   background: var(--white);
   color: var(--error);
   border: 0.2vw solid var(--error);
-  font-size: 4.2vw;
 }
 dialog .content .cartDetail .btnBlock button.del i {
   font-size: 5.3vw;
