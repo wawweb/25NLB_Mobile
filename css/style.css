@@ -2051,10 +2051,10 @@ dialog {
 dialog[open] {
   display: block;
 }
-dialog::-ms-backdrop {
+dialog[open]::-ms-backdrop {
   background: var(--mask);
 }
-dialog::backdrop {
+dialog[open]::backdrop {
   background: var(--mask);
 }
 dialog.gamePopup .top {
