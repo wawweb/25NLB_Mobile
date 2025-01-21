@@ -13,7 +13,7 @@ dialog {
   &[open] {
     display: block;
     &::backdrop {
-      background: var(--mask);
+      background: #00000096;
     }
   }
   &.gamePopup {

@@ -2052,10 +2052,10 @@ dialog[open] {
   display: block;
 }
 dialog[open]::-ms-backdrop {
-  background: var(--mask);
+  background: rgba(0, 0, 0, 0.5882352941);
 }
 dialog[open]::backdrop {
-  background: var(--mask);
+  background: rgba(0, 0, 0, 0.5882352941);
 }
 dialog.gamePopup .top {
   width: 100%;
