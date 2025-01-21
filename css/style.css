@@ -2623,7 +2623,7 @@ dialog .content .cartList .cartItem > div {
 }
 dialog .content .cartList .cartItem > div.num {
   float: left;
-  height: 70%;
+  height: 65%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
