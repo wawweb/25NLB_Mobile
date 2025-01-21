@@ -13,7 +13,7 @@ dialog {
   &[open] {
     display: block;
     &::backdrop {
-      background: #00000096;
+      background: #C2C5D680;
     }
   }
   &.gamePopup {
@@ -496,6 +496,11 @@ dialog {
 
 [theme="dark"] dialog {
   background: var(--black2);
+  &[open] {
+    &::backdrop {
+      background: #00000080;
+    }
+  }
   &.gamePopup {
     .top {
       background: var(--gray1);

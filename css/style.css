@@ -2052,10 +2052,10 @@ dialog[open] {
   display: block;
 }
 dialog[open]::-ms-backdrop {
-  background: rgba(0, 0, 0, 0.5882352941);
+  background: rgba(194, 197, 214, 0.5019607843);
 }
 dialog[open]::backdrop {
-  background: rgba(0, 0, 0, 0.5882352941);
+  background: rgba(194, 197, 214, 0.5019607843);
 }
 dialog.gamePopup .top {
   width: 100%;
@@ -2686,6 +2686,12 @@ dialog .content .msgWrap .btnBox > button:last-child:active, dialog .content .ms
 
 [theme=dark] dialog {
   background: var(--black2);
+}
+[theme=dark] dialog[open]::-ms-backdrop {
+  background: rgba(0, 0, 0, 0.5019607843);
+}
+[theme=dark] dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.5019607843);
 }
 [theme=dark] dialog.gamePopup .top {
   background: var(--gray1);
