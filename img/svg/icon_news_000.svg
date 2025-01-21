@@ -1,0 +1,9 @@
+<svg id="icon_news_black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="Rectangle_3" data-name="Rectangle 3" width="20" height="20" fill="none"/>
+  <g id="Group_1" data-name="Group 1" transform="translate(1.25 0.517)">
+    <path id="Path_1" data-name="Path 1" d="M10.741,67c.239-2.42-1.617-.507-2.371-2.277s-1.949-3.381-1.261-4.215,7.278-7.09,8.7-6.684,4.9,10.879,3.966,11.558-6.64,0-6.64,0,2.463,3.884,0,4.158S10.5,69.424,10.741,67Z" transform="translate(-6.903 -52.326)" fill="#282831"/>
+    <path id="Line_1" data-name="Line 1" d="M.626,2.59A.625.625,0,0,1,.25,1.465L2.037.125a.625.625,0,1,1,.75,1L1,2.465A.622.622,0,0,1,.626,2.59Z" transform="translate(11.743 0.579) rotate(-11)" fill="#282831"/>
+    <path id="Line_3" data-name="Line 3" d="M.626,2.59A.625.625,0,0,1,.25,1.465L2.037.125a.625.625,0,1,1,.75,1L1,2.465A.622.622,0,0,1,.626,2.59Z" transform="matrix(0.946, 0.326, -0.326, 0.946, 15.23, 3.907)" fill="#282831"/>
+    <path id="Line_4" data-name="Line 4" d="M.626,2.59A.625.625,0,0,1,.25,1.465L2.037.125a.625.625,0,1,1,.75,1L1,2.465A.622.622,0,0,1,.626,2.59Z" transform="translate(16.083 8.531) rotate(43)" fill="#282831"/>
+  </g>
+</svg>

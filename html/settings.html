@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- style -->
+	<link rel="stylesheet" href="../css/style.css">
+	<!-- Google Fonts - Material Symbols & Icons -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- flatpickr -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<title>25NLB</title>
+</head>
+
+<body>
+	<section class="settingNav">
+		<div class="title">
+			<h2>設定</h2>
+		</div>
+	</section>
+	<main class="settingPage">
+		<ul class="settings">
+			<li>
+				<i class="material-symbols-rounded"> palette </i>
+				<p>主題風格</p>
+				<div class="styleSw">
+					<button class="sun active">日間</button>
+					<button class="dark">夜間</button>
+				</div>
+			</li>
+			<li data-popup="handicap">
+				<i class="material-symbols-rounded"> attach_money </i>
+				<p>盤口設置</p>
+				<i class="material-symbols-rounded"> keyboard_arrow_right </i>
+			</li>
+			<li data-popup="language">
+				<i class="material-symbols-rounded"> globe </i>
+				<p>切換語言</p>
+				<i class="material-symbols-rounded"> keyboard_arrow_right </i>
+			</li>
+			<a href="./rule.html">
+				<i class="material-symbols-rounded"> help </i>
+				<p>規則說明</p>
+				<i class="material-symbols-rounded"> keyboard_arrow_right </i>
+			</a>
+			<li data-popup="timeZone">
+				<i class="material-symbols-rounded"> language </i>
+				<p>時區</p>
+				<i class="material-symbols-rounded"> keyboard_arrow_right </i>
+			</li>
+			<a href="./post.html">
+				<i class="news_ic"></i>
+				<p>公告中心</p>
+				<span class="count ">280</span>
+				<i class="material-symbols-rounded"> keyboard_arrow_right </i>
+			</a>
+		</ul>
+	</main>
+	<footer>
+		<nav class="navbar">
+			<a href="../"><i class="material-symbols-rounded"> home </i>首頁</a>
+			<a class="active" href="#"><i class="material-symbols-rounded"> settings </i>設定</a>
+			<a href="./immediately.html"><i class="material-symbols-rounded"> overview </i>即時注單</a>
+			<a href="./history.html"><i class="material-symbols-rounded"> summarize </i>歷史注單</a>
+		</nav>
+	</footer>
+
+	<!-- 彈窗 -->
+	<section class="dialogBlock">
+		<!-- 盤口設置 -->
+		<dialog class="handicap" >
+			<div class="title">
+				<p class="title__name">盤口設置</p>
+				<button class="title__btn title__btn--right close" >
+					<i class="material-symbols-rounded"> close </i>
+				</button>
+			</div>
+			<div class="content">
+				<ul class="optionList" id="handicapOptions">
+					<li>歐洲盤
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li class="active">香港盤
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+				</ul>
+			</div>
+		</dialog>
+		<!-- 語言切換 -->
+		<dialog class="language" >
+			<div class="title">
+				<p class="title__name">切換語言</p>
+				<button class="title__btn title__btn--right close" >
+					<i class="material-symbols-rounded"> close </i>
+				</button>
+			</div>
+			<div class="content">
+				<ul class="optionList" id="languageOptions">
+					<li>簡體中文
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li class="active">繁體中文
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>English
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>Tiếng Việt
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>ไทย
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>Melayu
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>Indonesia
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>한국어
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+				</ul>
+			</div>
+		</dialog>
+		<!-- 時區 -->
+		<dialog class="timeZone" >
+			<div class="title">
+				<p class="title__name">時區</p>
+				<button class="title__btn title__btn--right close">
+					<i class="material-symbols-rounded"> close </i>
+				</button>
+			</div>
+			<div class="content">
+				<ul class="optionList" id="timeZoneOptions">
+					<li>GMT -11
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li class="active">GMT -10
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -9
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -8
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -6
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -5
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -4
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -3
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -2
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT -1
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT +0
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT +1
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+					<li>GMT +2
+						<i class="material-symbols-rounded"> task_alt </i>
+					</li>
+				</ul>
+			</div>
+		</dialog>
+	</section>
+</body>
+<script type="module" src="../js/script.js"></script>
+
+</html>

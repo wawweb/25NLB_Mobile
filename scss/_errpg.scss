@@ -1,0 +1,55 @@
+@use './colorStyle' as style;
+
+.errpg {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    >i {
+        color: var(--pri);
+        font-size: 21vw;
+    }
+
+    .statusCode {
+        text-shadow: 0px 3px 6px rgba(#000, 0.2);
+        color: var(--pri);
+        font-size: 16vw;
+        font-weight: bold;
+        margin-bottom: 6.4vw;
+    }
+
+    .msg {
+        color: var(--sec-dark);
+        font-size: 4.8vw;
+        font-weight: bold;
+        margin-bottom: 6.4vw;
+    }
+
+    .text {
+        color: var(--black2);
+        font-size: 4.2vw;
+        font-weight: bold;
+        margin-bottom: 8vw;
+    }
+
+    button {
+        @include style.btnStyle_base;
+        width: 260px;
+    }
+
+    [theme="dark"] &.errpg {
+        background: var(--black2);
+
+        .text {
+            color: var(--white);
+        }
+    }
+}

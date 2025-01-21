@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon" sizes="64x64">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>25NLB</title>
+</head>
+
+<body>
+  <section class="topNav">
+    <div class="marquee">
+      <i class="news"></i>
+      <p>[2024-12-02 29:36 AM] NAVI Junior vs 龍隊 賽事即</p>
+      <i class="material-symbols-rounded"> close </i>
+    </div>
+    <nav>
+      <a class="navItem " href="../index.html">
+        <i class="material-symbols-rounded"> local_fire_department </i>
+        <p>熱門</p>
+      </a>
+      <a class="navItem " href="./walk.html">
+        <i class="material-symbols-rounded"> barefoot </i>
+        <p>走地</p>
+      </a>
+      <a class="navItem active" href="./timer.html">
+        <i class="material-symbols-rounded"> timer </i>
+        <p>賽前</p>
+      </a>
+      <a class="navItem" href="./flare.html">
+        <i class="material-symbols-rounded"> flare </i>
+        <p>串關</p>
+      </a>
+    </nav>
+    <nav class="gameNav">
+      <div class="navList swiper-wrapper">
+        <div class="navItem swiper-slide active " data-nav="soccer">
+          <i class="material-symbols-rounded"> sports_soccer </i>
+          <p>足球</p>
+          <p class="remind">999</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="basketball">
+          <i class="material-symbols-rounded"> sports_basketball </i>
+          <p>籃球</p>
+          <p class="remind">20</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="esports">
+          <i class="material-symbols-rounded"> sports_esports </i>
+          <p>電競</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="tennis">
+          <i class="material-symbols-rounded"> sports_tennis </i>
+          <p>網球</p>
+          <p class="remind">5</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="baseball">
+          <i class="material-symbols-rounded"> sports_baseball </i>
+          <p>棒球</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="cricket">
+          <i class="material-symbols-rounded"> sports_cricket </i>
+          <p>冰球</p>
+        </div>
+        <div class="navItem swiper-slide " data-nav="football">
+          <i class="material-symbols-rounded"> sports_football </i>
+          <p>美式足球</p>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <aside>
+    <section class="fontSize">
+      <i class="material-symbols-rounded"> format_size </i>
+      <p>大小</p>
+    </section>
+    <section class="cart">
+      <i class="material-symbols-rounded"> receipt_long </i>
+      <div class="num">2</div>
+    </section>
+    <section class="fontSizeControl">
+      <div class="small">小</div>
+      <div class="middle active">中</div>
+      <div class="big">大</div>
+      <div class="close"><i class="material-symbols-rounded"> close </i></div>
+    </section>
+  </aside>
+  <main class="innerPage display" data-main="soccer">
+    <section class="listItem">
+      <div class="title">
+        <div class="icon">
+          <i class="material-symbols-rounded"> sports_soccer </i>
+        </div>
+        <p>蘇格蘭 - 超級聯賽</p>
+      </div>
+      <div class="team ">
+        <div class="left">
+          <div class="host">主</div>
+          <p>愛華頓</p>
+        </div>
+        <div class="center">
+          <p>0-0</p>
+          <p class="vs">1h44</p>
+        </div>
+        <div class="right">
+          <p>狼隊</p>
+          <i class="material-symbols-rounded"> replay </i>
+        </div>
+      </div>
+      <div class="content">
+        <section>
+          <div class="title">比賽 輸贏盤</div>
+          <div class="list">
+            <div class="item active">
+              <p>Chủ</p>
+              <div class="num">
+                <p class=" up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>和</p>
+              <div class="num">
+                <p class=" up">3.430</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>Khách</p>
+              <div class="num">
+                <p class=" up">3.620</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 讓分</div>
+          <div class="list">
+            <div class="item">
+              <p>-0.25</p>
+              <div class="num">
+                <p class="down triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>0.25</p>
+              <div class="num">
+                <p class="up">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 大小盤</div>
+          <div class="list">
+            <div class="item">
+              <p>大</p>
+              <div class="num">
+                <p class="percent">55%</p>
+                <p class="up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>小</p>
+              <div class="num">
+                <p class="percent">45%</p>
+                <p class="down triangle">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <a href="./game_soccer.html">
+          +26 市場
+          <i class="material-symbols-rounded"> keyboard_arrow_right </i>
+        </a>
+      </div>
+      <div class="team ">
+        <div class="left">
+          <div class="host">主</div>
+          <p>曼城</p>
+        </div>
+        <div class="center">
+          <p>0-0</p>
+          <p class="vs">1h44</p>
+        </div>
+        <div class="right">
+          <p>諾定威森林</p>
+          <i class="material-symbols-rounded"> replay </i>
+        </div>
+      </div>
+      <div class="content">
+        <section>
+          <div class="title">比賽 輸贏盤</div>
+          <div class="list">
+            <div class="item active">
+              <p>主</p>
+              <div class="num">
+                <p class=" up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>和</p>
+              <div class="num">
+                <p class=" up">3.430</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>和</p>
+              <div class="num">
+                <p class=" up">3.620</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 讓分</div>
+          <div class="list">
+            <div class="item">
+              <p>-0.25</p>
+              <div class="num">
+                <p class="down triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>0.25</p>
+              <div class="num">
+                <p class="up">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 大小盤</div>
+          <div class="list">
+            <div class="item">
+              <p>大</p>
+              <div class="num">
+                <p class="percent">55%</p>
+                <p class="up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>小</p>
+              <div class="num">
+                <p class="percent">45%</p>
+                <p class="down triangle">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <a href="./game_soccer.html">
+          +26 市場
+          <i class="material-symbols-rounded"> keyboard_arrow_right </i>
+        </a>
+      </div>
+    </section>
+  </main>
+  <main class="innerPage " data-main="basketball">
+    <section class="listItem">
+      <div class="title">
+        <div class="icon">
+          <i class="material-symbols-rounded"> sports_basketball </i>
+        </div>
+        <p>籃球-FIBA籃球冠軍聯賽</p>
+      </div>
+      <div class="team ">
+        <div class="left">
+          <div class="host">主</div>
+          <p>代切青國王</p>
+        </div>
+        <div class="center">
+          <p>0-0</p>
+          <p class="vs">1h44</p>
+        </div>
+        <div class="right">
+          <p>索卡體育</p>
+          <i class="material-symbols-rounded"> replay </i>
+        </div>
+      </div>
+      <div class="content">
+        <section>
+          <div class="title">比賽 輸贏盤</div>
+          <div class="list">
+            <div class="item active">
+              <p>主</p>
+              <div class="num">
+                <p class=" up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>13+25</p>
+              <div class="num">
+                <p class=" up">3.620</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 讓分</div>
+          <div class="list">
+            <div class="item">
+              <p>10.5</p>
+              <div class="num">
+                <p class="down triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>-10.5</p>
+              <div class="num">
+                <p class="up">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 大小盤</div>
+          <div class="list">
+            <div class="item">
+              <p>大</p>
+              <div class="num">
+                <p class="percent">55%</p>
+                <p class="up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>小</p>
+              <div class="num">
+                <p class="percent">45%</p>
+                <p class="down triangle">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <a href="./game_basketball.html">
+          +26 市場
+          <i class="material-symbols-rounded"> keyboard_arrow_right </i>
+        </a>
+      </div>
+      <div class="team ">
+        <div class="left">
+          <div class="host">主</div>
+          <p>烏茲堡</p>
+        </div>
+        <div class="center">
+          <p>0-0</p>
+          <p class="vs">1h44</p>
+        </div>
+        <div class="right">
+          <p>霍隆夏普爾</p>
+          <i class="material-symbols-rounded"> replay </i>
+        </div>
+      </div>
+      <div class="content">
+        <section>
+          <div class="title">比賽 輸贏盤</div>
+          <div class="list">
+            <div class="item active">
+              <p>主</p>
+              <div class="num">
+                <p class=" up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>和</p>
+              <div class="num">
+                <p class=" up">3.620</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 讓分</div>
+          <div class="list">
+            <div class="item">
+              <p>-0.25</p>
+              <div class="num">
+                <p class="down triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>0.25</p>
+              <div class="num">
+                <p class="up">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="title">比賽 大小盤</div>
+          <div class="list">
+            <div class="item">
+              <p>大</p>
+              <div class="num">
+                <p class="percent">55%</p>
+                <p class="up triangle">2.150</p>
+              </div>
+            </div>
+            <div class="item">
+              <p>小</p>
+              <div class="num">
+                <p class="percent">45%</p>
+                <p class="down triangle">3.430</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <a href="./game_basketball.html">
+          +26 市場
+          <i class="material-symbols-rounded"> keyboard_arrow_right </i>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <nav class="navbar">
+      <a class="active" href="../index.html"><i class="material-symbols-rounded">home</i>首頁</a>
+      <a href="./settings.html"><i class="material-symbols-rounded">settings</i>設定</a>
+      <a href="./immediately.html"><i class="material-symbols-rounded">overview</i>即時注單</a>
+      <a href="./history.html"><i class="material-symbols-rounded">summarize</i>歷史注單</a>
+    </nav>
+  </footer>
+  <!-- 彈窗 -->
+  <section class="dialogBlock">
+    <dialog class="gamePopup" data-game="soccer">
+      <div class="top">
+        <i class="material-symbols-rounded"> keyboard_arrow_left </i>
+        <p>錦標賽</p>
+      </div>
+      <div class="bottom">
+        <div class="title">
+          <div class="icon">
+            <i class="material-symbols-rounded"> sports_soccer </i>
+            <p>足球</p>
+          </div>
+          <input type="text" placeholder="請輸入關鍵字">
+        </div>
+        <div class="list">
+          <a href="#" class="item">
+            <p>中國</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>俄羅斯. 全國學生聯賽</p>
+            <div>
+              <p class="remind">20</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>印度尼西亞</p>
+            <div>
+              <p class="remind">10</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>OFC冠軍聯賽。婦女</p>
+            <div>
+              <p class="remind">230</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>簡化足球3x3</p>
+            <div>
+              <p class="remind">166</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>簡化足球4x4</p>
+            <div>
+              <p class="remind">30</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>大學生乙級聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>學生聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>LFL甲級聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </dialog>
+    <dialog class="gamePopup" data-game="basketball">
+      <div class="top">
+        <i class="material-symbols-rounded"> keyboard_arrow_left </i>
+        <p>錦標賽</p>
+      </div>
+      <div class="bottom">
+        <div class="title">
+          <div class="icon">
+            <i class="material-symbols-rounded"> sports_basketball </i>
+            <p>籃球</p>
+          </div>
+          <input type="text" placeholder="請輸入關鍵字">
+        </div>
+        <div class="list">
+          <a href="#" class="item">
+            <p>籃球-FIBA籃球冠軍聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>俄羅斯. 全國學生聯賽</p>
+            <div>
+              <p class="remind">20</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>印度尼西亞</p>
+            <div>
+              <p class="remind">10</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>OFC冠軍聯賽。婦女</p>
+            <div>
+              <p class="remind">230</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>簡化足球3x3</p>
+            <div>
+              <p class="remind">166</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>簡化足球4x4</p>
+            <div>
+              <p class="remind">30</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>大學生乙級聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>學生聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>LFL甲級聯賽</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+          <a href="#" class="item">
+            <p>USSR. Division 3x3</p>
+            <div>
+              <p class="remind">928</p>
+              <i class="fav"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </dialog>
+    <!-- 購彩車彈窗 -->
+    <dialog class="cart">
+      <div class="title">
+        <button class="title__btn title__btn--left">
+          <i class="material-symbols-rounded"> help </i>
+        </button>
+        <ul class="title__topNav" id="titleTopNavOptions">
+          <li class="active">單場</li>
+          <li>串關</li>
+        </ul>
+        <button class="title__btn title__btn--right close">
+          <i class="material-symbols-rounded"> close </i>
+        </button>
+      </div>
+      <div class="content dataList display">
+        <div class="cartList">
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+          <div class="cartItem">
+            <div class="top">
+              <div class="icon">
+                <i class="material-symbols-rounded"> sports_soccer </i>
+                <p>籃球-FIBA籃球冠軍聯賽</p>
+              </div>
+              <i class="material-symbols-rounded"> close </i>
+            </div>
+            <div class="middle">
+              <div class="team">代切青國王</div>
+              <div class="center">
+                <p class="vs">VS</p>
+                <p class="date">12-14 08:07</p>
+              </div>
+              <div class="team">索卡體育</div>
+            </div>
+            <div class="bottom">
+              <p>代切青國王</p>
+              <p>1.47</p>
+            </div>
+          </div>
+        </div>
+        <div class="cartDetail">
+          <div class="detailItem">
+            <p>投注金額</p>
+            <input type="text" value="100">
+          </div>
+          <div class="detailItem win">
+            <p>預期獲利</p>
+            <p>46,208</p>
+          </div>
+          <div class="btnBlock">
+            <button class="del">
+              <i class="material-symbols-rounded"> delete </i>
+              刪除全部
+            </button>
+            <button class="submit">送出(單場)</button>
+          </div>
+        </div>
+      </div>
+      <div class="content noData">
+        <div class="noDataWrap">
+          <i class="material-symbols-rounded"> data_alert </i>
+          <p>無任何注單</p>
+        </div>
+        <div class="operateWrap">
+          <button>回上一頁</button>
+        </div>
+      </div>
+    </dialog>
+    <!-- 提示彈窗 確定 -->
+    <dialog class="tip tip--default">
+      <div class="title">
+        <p class="title__name">提示訊息</p>
+        <button class="title__btn title__btn--right tip_close">
+          <i class="material-symbols-rounded"> close </i>
+        </button>
+      </div>
+      <div class="content">
+        <div class="msgWrap">
+          <p>輸入金額超過你的額度!</p>
+          <div class="btnBox">
+            <button class="checks">確定</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <!-- 提示彈窗 取消 -->
+    <dialog class="tip tip--secondary">
+      <div class="title">
+        <p class="title__name">提示訊息</p>
+        <button class="title__btn title__btn--right tip_close">
+          <i class="material-symbols-rounded"> close </i>
+        </button>
+      </div>
+      <div class="content">
+        <div class="msgWrap">
+          <p>投注金額不足，是否繼續投注?</p>
+          <div class="btnBox">
+            <button class="checks">取消</button>
+            <button class="submit">確定</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="../js/script.js"></script>
+</body>
+
+</html>

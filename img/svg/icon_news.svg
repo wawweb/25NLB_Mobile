@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="icon_news" transform="translate(-8 -58)">
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="16" height="16" transform="translate(8 58)" fill="none"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(0.097 -1.374)">
+      <path id="Path_1" data-name="Path 1" d="M9.973,64.365c.192-1.936-1.293-.406-1.9-1.822s-1.559-2.7-1.009-3.372,5.822-5.672,6.956-5.347,3.916,8.7,3.173,9.247-5.312,0-5.312,0,1.971,3.107,0,3.326S9.782,66.3,9.973,64.365Z" transform="translate(2 7.164)" fill="#f8de7c"/>
+      <path id="Line_1" data-name="Line 1" d="M0,1.572a.5.5,0,0,1-.4-.2.5.5,0,0,1,.1-.7L1.129-.4a.5.5,0,0,1,.7.1.5.5,0,0,1-.1.7L.3,1.472A.5.5,0,0,1,0,1.572Z" transform="translate(18.883 60.646) rotate(-11)" fill="#f8de7c"/>
+      <path id="Line_3" data-name="Line 3" d="M0,1.572a.5.5,0,0,1-.4-.2.5.5,0,0,1,.1-.7L1.129-.4a.5.5,0,0,1,.7.1.5.5,0,0,1-.1.7L.3,1.472A.5.5,0,0,1,0,1.572Z" transform="matrix(0.946, 0.326, -0.326, 0.946, 21.397, 63.549)" fill="#f8de7c"/>
+      <path id="Line_4" data-name="Line 4" d="M0,1.572a.5.5,0,0,1-.4-.2.5.5,0,0,1,.1-.7L1.129-.4a.5.5,0,0,1,.7.1.5.5,0,0,1-.1.7L.3,1.472A.5.5,0,0,1,0,1.572Z" transform="translate(21.794 67.319) rotate(43)" fill="#f8de7c"/>
+    </g>
+  </g>
+</svg>

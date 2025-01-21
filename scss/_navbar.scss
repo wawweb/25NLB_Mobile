@@ -1,0 +1,406 @@
+.topNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  font-size: 3.7vw;
+  z-index: 99;
+  .marquee {
+    background: var(--gray6);
+    padding: 2.4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .news {
+      width: 4.25vw;
+      height: 4.25vw;
+    }
+    p {
+      color: var(--gray1);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    i {
+      color: var(--gray2);
+      font-size: 3.2vw;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 0.5vw 2.4vw;
+    gap: 1.3vw;
+    background: var(--white);
+    a {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.3vw 4vw;
+      border-radius: 1.6vw;
+      gap: 3vw;
+      color: var(--black2);
+      background: var(--gray6);
+      &.active,
+      &:active {
+        color: var(--white);
+        background: linear-gradient(180deg, var(--pri), var(--pri-2));
+      }
+      i {
+        font-size: 4.2vw;
+      }
+    }
+  }
+  .gameNav {
+    width: 100vw;
+    .navList {
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      div {
+        width: 16vw;
+        height: 16vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.6vw;
+        padding: 0;
+        gap: 2vw;
+        font-size: 3.2vw;
+        font-weight: bold;
+        position: relative;
+        box-shadow: inset 0 0.8vw 1.6vw #00000029;
+        background: var(--gray5);
+        &.active,
+        &:active {
+          background: linear-gradient(180deg, var(--sec), var(--sec-dark));
+        }
+        i {
+          font-size: 5.3vw;
+        }
+        .remind {
+          position: absolute;
+          top: 1vw;
+          right: 1vw;
+          background: var(--pri-dark);
+          border-radius: 3.2vw;
+          color: var(--white);
+          padding: 0.8vw 1.3vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 3.2vw;
+        }
+      }
+    }
+  }
+  .title {
+    background: var(--white);
+    font-size: 5.3vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 2.6vw 0;
+    border-radius: 0 0 2.6vw 2.6vw;
+    box-shadow: 0 0.8vw 1.6vw #00000008;
+    span {
+      font-style: italic;
+    }
+  }
+}
+// 遊戲內頁
+.innerGameNav {
+  width: 100%;
+  height: 11.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding: 0 4.25vw;
+  background: linear-gradient(180deg, #000000cc, #0000004d);
+  color: var(--white);
+  z-index: 99;
+  i {
+    position: absolute;
+    left: 4.25vw;
+  }
+}
+// 內頁
+.innerNav {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 0.8vw 1.6vw #00000029;
+  border-radius: 0 0 2.6vw 2.6vw;
+  background: var(--white);
+  z-index: 99;
+  > div {
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 4.2vw;
+    &.title {
+      height: 11.2vw;
+      justify-content: center;
+      padding: 2.8vw;
+      margin-bottom: 2vw;
+    }
+    &.dateList {
+      button {
+        padding: 2vw 3.2vw;
+        color: var(--pri);
+        border: 0.2vw solid var(--pri);
+        border-radius: 2.65vw;
+        font-size: 4.2vw;
+        &:active,
+        &.active {
+          background: linear-gradient(var(--pri-2), var(--pri));
+          color: var(--white);
+        }
+        &.customize {
+          padding: 0.4vw 1.5vw;
+          font-size: 3.2vw;
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.8vw;
+          position: relative;
+          background: linear-gradient(var(--pri-2), var(--pri));
+          color: var(--white);
+          .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 1.3vw solid;
+            border-color: var(--white) transparent transparent transparent;
+            top: 50%;
+            transform: translateY(-30%);
+          }
+        }
+        &[data-id=customize].active{
+          display: none;
+          &~.customize{
+            display: flex;
+          }
+        }
+      }
+    }
+    &.detail {
+      text-align: center;
+      padding: 1.3vw 1.3vw 0;
+      > div {
+        padding: 1.3vw;
+        width: 33.3%;
+        border-right: 0.2vw solid var(--gray4);
+        &:last-child {
+          border: none;
+        }
+        p {
+          margin-top: 1vw;
+          line-height: 4.5vw;
+          &:first-child {
+            font-size: 3.7vw;
+          }
+          &:last-child {
+            font-weight: bolder;
+          }
+          &.up {
+            color: var(--success);
+          }
+        }
+      }
+    }
+    &.tab {
+      justify-content: center;
+      gap: 2vw;
+      margin-bottom: 2vw;
+      .tabItem {
+        display: flex;
+        align-items: center;
+        height: 11.2vw;
+        padding: 0 4.1vw;
+        font-size: 4.2vw;
+        position: relative;
+        color: var(--gray2);
+        &:active,
+        &.active {
+          color: var(--black2);
+          &::after {
+            content: "";
+            position: absolute;
+            height: 0.75vw;
+            width: 40%;
+            background: var(--pri);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+// 設定頁
+.settingNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  .title {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 11.2vw;
+
+      >h2 {
+          color: var(--black2);
+          font-size: 4.2vw;
+      }
+  }
+}
+// 設定內頁
+.settingInnerNav {
+  position: fixed;
+  width: 100%;
+  background: var(--white);
+  z-index: 99;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11.2vw;
+    &.title {
+      font-size: 4.2vw;
+      position: relative;
+      i {
+        color: var(--gray2);
+        font-size: 6.4vw;
+        position: absolute;
+        left: 2.6vw;
+      }
+    }
+    &.tab {
+      padding: 0 7vw;
+      justify-content: flex-start;
+      gap: 4vw;
+      color: var(--gray2);
+      .tabItem {
+        position: relative;
+        height: 100%;
+        &.active,
+        &:active {
+          color: var(--black2);
+          &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            width: 40%;
+            height: 0.75vw;
+            background: var(--pri);
+          }
+        }
+      }
+    }
+  }
+}
+
+[theme="dark"] .topNav {
+  .marquee {
+    background: var(--black1);
+    p {
+      color: var(--gray4);
+    }
+    i {
+      color: var(--gray2);
+    }
+  }
+  nav {
+    background: var(--gray1);
+    a {
+      background: var(--black2);
+      color: var(--gray3);
+      &.active,
+      &:active {
+        color: var(--white);
+        background: linear-gradient(180deg, var(--pri), var(--pri-2));
+      }
+    }
+  }
+  .title {
+    background: var(--gray1);
+    color: var(--white);
+  }
+  .gameNav {
+    .navList {
+      background: var(--gray1);
+      div {
+        background: var(--black2);
+        &.active,
+        &:active {
+          background: linear-gradient(180deg, var(--sec), var(--sec-dark));
+          color: var(--black2);
+        }
+        .remind {
+          background: var(--pri);
+        }
+      }
+    }
+  }
+}
+[theme="dark"] .innerNav {
+  background: var(--gray1);
+  > div {
+    &.tab {
+      .tabItem {
+        &:active,
+        &.active {
+          color: var(--white);
+        }
+      }
+    }
+    &.dateList {
+      button {
+        color: var(--gray3);
+        background: var(--black2);
+        border: none;
+        &.customize, 
+        &:active,
+        &.active {
+          background: linear-gradient(var(--pri-2), var(--pri));
+          color: var(--white);
+        }
+      }
+    }
+    &.detail {
+      > div {
+        border-right: 0.2vw solid var(--unnamed-color-42444d);
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+}
+[theme="dark"] .settingInnerNav {
+  background: var(--gray1);
+  div {
+    &.tab {
+      .tabItem {
+        &.active,
+        &:active {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+[theme="dark"] .settingNav{
+  .title {
+    background: var(--gray1);
+    >h2 {
+        color: var(--white);
+    }
+}
+}

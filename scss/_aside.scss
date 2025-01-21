@@ -1,0 +1,124 @@
+aside {
+  position: fixed;
+  bottom: 22.4vw;
+  right: 2.6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3.7vw;
+  z-index: 99;
+  &.gamePage{
+    bottom: 3vw;
+    background: none;
+  }
+  section {
+    border-radius: 4.25vw;
+    box-shadow: 0 0 4.2vw #00000029;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.fontSize {
+      background: var(--white);
+      color: var(--pri);
+      border: 0.2vw solid var(--pri);
+      width: 13.8vw;
+      height: 13.8vw;
+      &.hide{
+        &~.fontSizeControl{
+          display: flex;
+        }
+      }
+    }
+    &.cart {
+      width: 16vw;
+      height: 16vw;
+      color: #fff;
+      background: linear-gradient(180deg, var(--pri), var(--pri-2));
+      position: relative;
+      i {
+        font-size: 10.6vw;
+      }
+      .num {
+        width: 8vw;
+        height: 5.8vw;
+        position: absolute;
+        top: -7.5%;
+        right: -7.5%;
+        background: var(--error);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2.9vw;
+      }
+    }
+    &.fontSizeControl {
+      position: absolute;
+      background: var(--gray4);
+      color: var(--pri);
+      border: 0.2vw solid var(--pri);
+      height: 13.8vw;
+      flex-direction: row;
+      right: 0;
+      top: 0;
+      gap: 1vw;
+      border: .2vw solid var(--pri);
+      display: none;
+      div {
+        width: 13.8vw;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray1);
+        font-weight: bold;
+        background: var(--white);
+        border-radius: 4.25vw;
+        &.active,
+        &:active {
+          background: var(--pri);
+          color: var(--white);
+        }
+        &.small {
+          font-size: 3.7vw;
+        }
+        &.middle {
+          font-size: 4.2vw;
+        }
+        &.big {
+          font-size: 5.3vw;
+        }
+        i {
+          font-size: 6.4vw;
+          color: var(--gray2);
+        }
+      }
+    }
+  }
+}
+
+[theme="dark"] aside{
+  &.gamePage{
+    background: none;
+  }
+  section {
+    &.fontSize {
+      background: var(--black2);
+    }
+    &.fontSizeControl{
+      background: var(--black2);
+      div{
+        background: var(--gray1);
+        color: var(--gray3);
+        &.active,
+        &:active {
+          background: var(--pri);
+          color: var(--white);
+        }
+        &:last-child{
+          background: var(--black2);
+        }
+      }
+    }
+  }
+}

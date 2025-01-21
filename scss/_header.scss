@@ -1,0 +1,28 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .title {
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 11.2vw;
+
+        >h2 {
+            color: var(--black2);
+            font-size: 4.2vw;
+        }
+    }
+
+    [theme="dark"] & .title {
+        background: var(--gray1);
+
+        >h2 {
+            color: var(--white);
+        }
+    }
+}

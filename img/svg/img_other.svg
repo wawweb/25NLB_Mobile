@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.675" height="33" viewBox="0 0 34.675 33">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#bfbfbf"/>
+      <stop offset="0.957" stop-color="#a5a5a5"/>
+      <stop offset="1" stop-color="#b9761d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d1d1d1"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <g id="img_other" transform="translate(-293 -139)">
+    <path id="Path_84" data-name="Path 84" d="M21.783,0h-12L0,14.586H12Z" transform="translate(305.892 139)" fill="#1f3890"/>
+    <path id="Path_83" data-name="Path 83" d="M0,0H12l9.783,14.586h-12Z" transform="translate(293 139)" fill="#405cbf"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(298 147)" stroke="#dadada" stroke-width="1" fill="url(#linear-gradient)">
+      <circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+      <circle cx="12.5" cy="12.5" r="12" fill="none"/>
+    </g>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="9.5" cy="9.5" r="9.5" transform="translate(301 150)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

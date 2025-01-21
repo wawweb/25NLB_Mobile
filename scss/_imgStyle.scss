@@ -1,0 +1,70 @@
+.topNav {
+  .news {
+    background: url("../img/svg/icon_news.svg") no-repeat center/contain;
+  }
+}
+// 彈窗
+dialog {
+  .fav {
+    background: url("../img/svg/like.svg") no-repeat center/contain;
+    &.active,
+    &:active {
+      background: url("../img/svg/like_active.svg") no-repeat center/contain;
+    }
+  } 
+  [theme="dark"] & .fav {
+    background: url("../img/svg/like_dark.svg") no-repeat center/contain;
+    &.active,
+    &:active {
+      background: url("../img/svg/like_active.svg") no-repeat center/contain;
+    }
+  }
+}
+// BG
+.gamePage {
+  .top {
+    &.bg_basketball {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_basketball.jpg") no-repeat center/cover;
+    }
+    &.bg_soccer {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_soccer.jpg") no-repeat center/cover;
+    }
+    &.bg_baseball {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_baseball.jpg") no-repeat center/cover;
+    }
+    &.bg_cricket {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_cricket.jpg") no-repeat center/cover;
+    }
+    &.bg_football {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_soccer.jpg") no-repeat center/cover;
+    }
+    &.bg_esports {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_esports.jpg") no-repeat center/cover;
+    }
+  }
+}
+
+.settings {
+  .news_ic {
+    background: url("../img/svg/icon_news_000.svg") no-repeat;
+    background-size: contain;
+    width: 4.2vw;
+    height: 4.2vw;
+  }
+
+  [theme="dark"] & .news_ic {
+    background: url("../img/svg/icon_news_fff.svg") no-repeat;
+  }
+}

@@ -1,0 +1,266 @@
+.gamePage {
+  background: var(--white);
+  .top {
+    padding-top: 15vw;
+    padding-bottom: 3vw;
+    width: 100%;
+    height: 59.2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .team {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      > div {
+        width: 40%;
+        height: 100%;
+        color: var(--white);
+        font-weight: bold;
+        font-size: 4.8vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        .teamItem {
+          padding-bottom: 5vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2vw;
+          .icon {
+            width: 21.3vw;
+            height: 21.3vw;
+            background: #fff;
+          }
+        }
+        .host {
+          width: 10vw;
+          height: 4vw;
+          position: absolute;
+          bottom: 0;
+          font-size: 3vw;
+          border-radius: 0.5vw;
+          background: linear-gradient(180deg, var(--pri), var(--pri-2));
+          text-align: center;
+          line-height: 4vw;
+        }
+        &.center {
+          padding-bottom: 3vw;
+          font-size: 3.2vw;
+          justify-content: flex-end;
+          width: 20%;
+          .vs {
+            font-size: 4vw;
+            color: var(--sec);
+          }
+        }
+      }
+    }
+    .video {
+      padding: 0 6vw;
+      text-align: right;
+      color: var(--gray4);
+    }
+  }
+  .bottom {
+    padding: 0 3vw;
+    > div {
+      padding: 2.6vw 3.5vw;
+      border-radius: 1.6vw;
+      margin-bottom: 2vw;
+      background: var(--gray5);
+      &.topButton {
+        margin-top: -3vw;
+      }
+      &.teamList {
+        &.show {
+          .content {
+            max-height: 100vh;
+          }
+        }
+        .title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            color: var(--black2);
+            font-weight: bold;
+            font-size: 4.2vw;
+          }
+          i {
+            color: var(--gray2);
+          }
+        }
+        .content {
+          overflow: hidden;
+          max-height: 0;
+          > div {
+            &.total {
+              ul {
+                margin-top: 2vw;
+                li {
+                  display: flex;
+                  font-size: 5.3vw;
+                  font-weight: bold;
+                  margin-bottom: 1vw;
+                  &:first-child {
+                    font-size: 4.2vw;
+                  }
+                  > div {
+                    width: 33%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &:first-child {
+                      justify-content: start;
+                    }
+                    &.list {
+                      width: 66.6%;
+                      .item {
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &.list {
+              margin-bottom: 1vw;
+            }
+          }
+        }
+      }
+    }
+    .list {
+      display: flex;
+      border: 0.2vw solid var(--gray2);
+      border-radius: 1vw;
+      overflow: hidden;
+      .item {
+        padding: 2vw 1.5vw;
+        width: 50%;
+        height: 12vw;
+        text-align: right;
+        border-right: 0.2vw solid var(--gray2);
+        background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &:last-child {
+          border: none;
+        }
+        &:active,
+        &.active {
+          background: linear-gradient(var(--pri), var(--pri-2));
+          p {
+            color: #fff !important;
+          }
+        }
+        p {
+          font-size: 4.8vw;
+          font-weight: bold;
+          text-align-last: left;
+        }
+        .num {
+          position: absolute;
+          right: 1.5vw;
+          bottom: 2vw;
+          display: flex;
+          flex-direction: column;
+          align-self: flex-end;
+          p {
+            position: relative;
+            font-size: 4.5vw;
+            &.up {
+              color: var(--success);
+              &.triangle {
+                &::before {
+                  background: linear-gradient(45deg, transparent 50%, var(--sec-dark) 50%);
+                  transform: rotate(-45deg);
+                  bottom: 0%;
+                }
+              }
+            }
+            &.down {
+              color: var(--error);
+              &.triangle {
+                &::before {
+                  background: linear-gradient(45deg, transparent 50%, var(--error) 50%);
+                  transform: rotate(135deg);
+                  bottom: 35%;
+                }
+              }
+            }
+            &.triangle {
+              padding-left: 5vw;
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 2.8vw;
+                height: 2.5vw;
+              }
+            }
+            &.percent {
+              font-size: 3.2vw;
+              align-self: flex-end;
+              background: var(--success);
+              color: var(--white);
+              border-radius: 1.3vw;
+              padding: 0.5vw 1vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+[theme="dark"] .gamePage {
+  background: var(--black2);
+  .top {
+    .team {
+      div {
+        .host {
+          background: linear-gradient(180deg, #3c5edb, #1f3fac);
+        }
+      }
+    }
+  }
+  .bottom {
+    > div {
+      background: var(--gray1);
+      &.teamList {
+        .title {
+          p {
+            color: var(--gray6);
+          }
+        }
+        .content {
+          > div {
+            &.total {
+              color: var(--gray3);
+            }
+          }
+        }
+      }
+    }
+    .list {
+      border: none;
+      .item {
+        background: linear-gradient(180deg, #2d2d2d, #42434f 8%, #42434f 84%, #2d2d2d);
+        border-right: var(--gray1);
+        color: var(--white);
+        &:active,
+        &.active {
+          background: linear-gradient(#1f3fac, #3c5edb);
+          p {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}
