@@ -1,49 +1,54 @@
+@use './colorStyle' as style;
+
 footer {
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	z-index: 99;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
 
-	.navbar {
-		background: var(--white);
-		display: flex;
-		width: 100%;
-		height: 60px;
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
-		padding-top: 8px;
-		padding-bottom: 4px;
+    .navbar {
+        box-shadow: style.$shadow;
+        background: var(--white);
+        display: flex;
+        width: 100%; 
+        height: 16vw;
+        border-top-left-radius: 2vw;
+        border-top-right-radius: 2vw;
+        padding-top: 2vw;
+        padding-bottom: 1vw;
 
-		> a {
-			color: var(--black2);
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-			font-size: 0.75rem;
-			line-height: 1.6;
+        >a {
+            color: var(--black2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            font-size: 3.2vw;
+            line-height: 1.2;
 
-			> i {
-				margin-bottom: 1vw;
-			}
+            >i {
+                font-size: 6.4vw;
+                margin-bottom: 1vw;
+            }
 
-			&.active,
-			&.active {
-				color: var(--pri-2);
-			}
-		}
-	}
+            &.active,
+            &.active {
+                color: var(--pri-2);
+            }
+        }
+    }
 
-	[theme="dark"] & .navbar {
-		background: var(--gray1);
-		> a {
-			color: var(--gray2);
+    [theme="dark"] & .navbar {
+        background: var(--gray1);
 
-			&.active,
-			&.active {
-				color: var(--sec);
-			}
-		}
-	}
+        >a {
+            color: var(--gray2);
+
+            &.active,
+            &.active {
+                color: var(--sec);
+            }
+        }
+    }
 }
