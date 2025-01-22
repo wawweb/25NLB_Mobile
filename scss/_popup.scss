@@ -10,6 +10,8 @@ dialog {
   height: 100vh;
   background: var(--white);
   display: none;
+  border-radius: 2.6vw 2.6vw 0 0;
+  overflow: hidden;
   &[open] {
     display: block;
     &::backdrop {

@@ -151,8 +151,6 @@ const body = document.body
   if (!gameNav) return
   gameNav.forEach((item) =>
     item.addEventListener("click", function (e) {
-      gameNav.forEach((item) => item.classList.remove("active"))
-      this.classList.add("active")
       const id = this.dataset.nav
       const dialog = document.querySelector(`dialog[data-game=${id}]`)
       if (!dialog) return
@@ -171,8 +169,15 @@ const body = document.body
           e.target.classList.toggle("active")
           return
         }
+        const gameNav = document.querySelectorAll(".topNav .navList .navItem")
+        gameNav.forEach((item) => item.classList.remove("active"))
         const open = document.querySelector("dialog[open]")
         const id = open.dataset.game
+        gameNav.forEach((item) => {
+          if (item.dataset.nav === id) {
+            item.classList.add("active")
+          }
+        })
         document.querySelector(`main.display`).classList.remove("display")
         document.querySelector(`main[data-main=${id}]`).classList.add("display")
         open.close()
@@ -213,6 +218,17 @@ const body = document.body
     item.addEventListener("click", function () {
       if (!item.dataset.id) {
         dateBtn.forEach((item) => item.classList.remove("active"))
+        const immediately = document.querySelector(".immediately")
+        if (immediately) {
+          immediately.querySelector(".noData").classList.add("display")
+          immediately.querySelector(".noteList").classList.remove("display")
+        }
+        const history = document.querySelector(".history")
+        if (history) {
+          history.querySelector(".noteList").classList.add("display")
+          history.querySelector(".cus").classList.remove("display")
+          document.querySelector(".innerNav .detail .num").classList.add("up")
+        }
         item.classList.add("active")
       } else {
         const realTime = document.querySelector("dialog.realTime")
@@ -232,6 +248,17 @@ const body = document.body
       item.classList.remove("active")
       if (item.dataset.id) item.classList.add("active")
     })
+    const immediately = document.querySelector(".immediately")
+    if (immediately) {
+      immediately.querySelector(".noData").classList.remove("display")
+      immediately.querySelector(".noteList").classList.add("display")
+    }
+    const history = document.querySelector(".history")
+    if (history) {
+      history.querySelector(".noteList").classList.remove("display")
+      history.querySelector(".cus").classList.add("display")
+      document.querySelector(".innerNav .detail .num").classList.remove("up")
+    }
     document.querySelector("dialog.realTime").close()
   })
 })()
@@ -268,15 +295,15 @@ const body = document.body
 })()
 
 // 購物車彈窗 單場/串關切換
-;(()=>{
-  const tabs = document.querySelectorAll('#titleTopNavOptions li')
-  tabs.forEach((tab,index)=>{
-    tab.addEventListener('click',function(){
-      tabs.forEach(item=>item.classList.remove('active'))
-      tab.classList.add('active')
-      const content = document.querySelectorAll('dialog.cart .content')
-      content.forEach(item=>item.classList.remove('display'))
-      content[index].classList.add('display')
+;(() => {
+  const tabs = document.querySelectorAll("#titleTopNavOptions li")
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function () {
+      tabs.forEach((item) => item.classList.remove("active"))
+      tab.classList.add("active")
+      const content = document.querySelectorAll("dialog.cart .content")
+      content.forEach((item) => item.classList.remove("display"))
+      content[index].classList.add("display")
     })
   })
 })()
