@@ -70,6 +70,8 @@ main {
             color: var(--white);
             display: flex;
             align-items: flex-end;
+            position: relative;
+            z-index: 1;
             &.start {
               background: linear-gradient(90deg, #f1ba22, #dc8615);
               border: 0.2vw solid #f1b34b;

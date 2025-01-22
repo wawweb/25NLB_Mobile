@@ -1131,6 +1131,8 @@ main.home > section.listItem > div.team, main.innerPage > section.listItem > div
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
+  z-index: 1;
 }
 main.home > section.listItem > div.team.start, main.innerPage > section.listItem > div.team.start {
   background: -webkit-gradient(linear, left top, right top, from(#f1ba22), to(#dc8615));
