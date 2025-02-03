@@ -46,12 +46,17 @@ dialog {
     &.bg_football {
       background:
         linear-gradient(180deg, #000000b3, #00000042),
-        url("../img/bg/bg_soccer.jpg") no-repeat center/cover;
+        url("../img/bg/bg_football.jpg") no-repeat center/cover;
     }
     &.bg_esports {
       background:
         linear-gradient(180deg, #000000b3, #00000042),
         url("../img/bg/bg_esports.jpg") no-repeat center/cover;
+    }
+    &.bg_tennis {
+      background:
+        linear-gradient(180deg, #000000b3, #00000042),
+        url("../img/bg/bg_tennis.jpg") no-repeat center/cover;
     }
   }
 }
