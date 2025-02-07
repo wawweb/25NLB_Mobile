@@ -786,9 +786,9 @@
   </main>
 
   <!-- 彈窗 -->
-  <section class="dialogBlock">
+  <section class="filter">
     <!-- 購彩車彈窗 -->
-    <dialog class="cart">
+    <div class="popup cart">
       <div class="title">
         <button class="title__btn title__btn--left">
           <i class="material-symbols-rounded"> help </i>
@@ -1108,9 +1108,9 @@
           <button>回上一頁</button>
         </div>
       </div>
-    </dialog>
+    </div>
     <!-- 提示彈窗 確定 -->
-    <dialog class="tip tip--default">
+    <div class="popup tip tip--default">
       <div class="title">
         <p class="title__name">提示訊息</p>
         <button class="title__btn title__btn--right tip_close">
@@ -1125,9 +1125,9 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </div>
     <!-- 提示彈窗 取消 -->
-    <dialog class="tip tip--secondary">
+    <div class="popup tip tip--secondary">
       <div class="title">
         <p class="title__name">提示訊息</p>
         <button class="title__btn title__btn--right tip_close">
@@ -1143,7 +1143,9 @@
           </div>
         </div>
       </div>
-    </dialog>
+    </div>
+    <!-- 提示彈窗 遮罩 -->
+    <div class="popup tipbg"></div>
   </section>
 
 

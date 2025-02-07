@@ -288,16 +288,16 @@ body {
   background: url("../img/svg/icon_news.svg") no-repeat center/contain;
 }
 
-dialog .fav {
+.popup .fav {
   background: url("../img/svg/like.svg") no-repeat center/contain;
 }
-dialog .fav.active, dialog .fav:active {
+.popup .fav.active, .popup .fav:active {
   background: url("../img/svg/like_active.svg") no-repeat center/contain;
 }
-[theme=dark] dialog .fav {
+[theme=dark] .popup .fav {
   background: url("../img/svg/like_dark.svg") no-repeat center/contain;
 }
-[theme=dark] dialog .fav.active, [theme=dark] dialog .fav:active {
+[theme=dark] .popup .fav.active, [theme=dark] .popup .fav:active {
   background: url("../img/svg/like_active.svg") no-repeat center/contain;
 }
 
@@ -2184,29 +2184,73 @@ main.settingInnerPage section.post .postItem .content {
   background: var(--mask);
 }
 
-dialog {
-  all: unset;
+.filter {
+  background: rgba(194, 197, 214, 0.5019607843);
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 99;
-  width: 100%;
-  height: 100vh;
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.filter.display {
+  display: block;
+}
+.filter .popup {
+  width: auto;
+  height: auto;
+  position: absolute;
   background: var(--white);
+  z-index: 9;
   display: none;
   border-radius: 2.6vw 2.6vw 0 0;
   overflow: hidden;
 }
-dialog[open] {
+.filter .popup.display {
   display: block;
 }
-dialog[open]::-ms-backdrop {
-  background: rgba(194, 197, 214, 0.5019607843);
+.filter .popup.cart {
+  width: 100%;
+  max-height: 90vh;
+  height: auto;
+  bottom: 0;
 }
-dialog[open]::backdrop {
-  background: rgba(194, 197, 214, 0.5019607843);
+.filter .popup.cart .content {
+  display: none;
+  height: 100%;
 }
-dialog.gamePopup .top {
+.filter .popup.cart .content.display {
+  display: block;
+}
+.filter .popup.cart .content.dataList {
+  height: 90vh;
+  position: relative;
+}
+.filter .popup.cart .content.dataList .cartDetail {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.filter .popup.cart .content.dataList_2 {
+  height: 90vh;
+}
+.filter .popup.cart .content.dataList_2 .cartList {
+  padding-bottom: 78vw;
+}
+.filter .popup.cart .content.dataList_2 .cartDetail {
+  width: 100%;
+  height: 55vw;
+  position: fixed;
+  bottom: 0;
+}
+.filter .popup.gamePopup {
+  width: 100%;
+  height: 100vh;
+}
+.filter .popup.gamePopup .top {
   width: 100%;
   height: 11.2vw;
   padding: 0 4.2vw;
@@ -2226,18 +2270,18 @@ dialog.gamePopup .top {
   font-weight: bold;
   z-index: 99;
 }
-dialog.gamePopup .top i {
+.filter .popup.gamePopup .top i {
   left: 4.2vw;
   position: absolute;
   color: var(--gray2);
   font-size: 6.4vw;
 }
-dialog.gamePopup .bottom {
+.filter .popup.gamePopup .bottom {
   height: 100%;
   padding-top: 11.2vw;
   overflow-y: scroll;
 }
-dialog.gamePopup .bottom .title {
+.filter .popup.gamePopup .bottom .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2246,7 +2290,7 @@ dialog.gamePopup .bottom .title {
           justify-content: space-between;
   padding: 1vw 3.2vw;
 }
-dialog.gamePopup .bottom .title .icon {
+.filter .popup.gamePopup .bottom .title .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2255,7 +2299,7 @@ dialog.gamePopup .bottom .title .icon {
           align-items: center;
   gap: 2vw;
 }
-dialog.gamePopup .bottom .title .icon i {
+.filter .popup.gamePopup .bottom .title .icon i {
   color: var(--black1);
   width: 9.6vw;
   height: 9.6vw;
@@ -2272,35 +2316,35 @@ dialog.gamePopup .bottom .title .icon i {
       -ms-flex-pack: center;
           justify-content: center;
 }
-dialog.gamePopup .bottom .title .icon p {
+.filter .popup.gamePopup .bottom .title .icon p {
   font-weight: bold;
   font-size: 4.2vw;
   font-weight: bold;
 }
-dialog.gamePopup .bottom .title input {
+.filter .popup.gamePopup .bottom .title input {
   border: 0.2vw solid var(--gray3);
   padding: 1.8vw 4.2vw;
   border-radius: 1.6vw;
 }
-dialog.gamePopup .bottom .title input::-webkit-input-placeholder {
+.filter .popup.gamePopup .bottom .title input::-webkit-input-placeholder {
   color: var(--gray2);
 }
-dialog.gamePopup .bottom .title input::-moz-placeholder {
+.filter .popup.gamePopup .bottom .title input::-moz-placeholder {
   color: var(--gray2);
 }
-dialog.gamePopup .bottom .title input:-ms-input-placeholder {
+.filter .popup.gamePopup .bottom .title input:-ms-input-placeholder {
   color: var(--gray2);
 }
-dialog.gamePopup .bottom .title input::-ms-input-placeholder {
+.filter .popup.gamePopup .bottom .title input::-ms-input-placeholder {
   color: var(--gray2);
 }
-dialog.gamePopup .bottom .title input::placeholder {
+.filter .popup.gamePopup .bottom .title input::placeholder {
   color: var(--gray2);
 }
-dialog.gamePopup .bottom .list {
+.filter .popup.gamePopup .bottom .list {
   padding: 2vw;
 }
-dialog.gamePopup .bottom .list .item {
+.filter .popup.gamePopup .bottom .list .item {
   margin-bottom: 1.5vw;
   border-radius: 1.6vw;
   background: var(--gray6);
@@ -2317,7 +2361,7 @@ dialog.gamePopup .bottom .list .item {
   color: var(--black2);
   font-weight: bold;
 }
-dialog.gamePopup .bottom .list .item div {
+.filter .popup.gamePopup .bottom .list .item div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2326,7 +2370,7 @@ dialog.gamePopup .bottom .list .item div {
           align-items: center;
   gap: 2vw;
 }
-dialog.gamePopup .bottom .list .item div .remind {
+.filter .popup.gamePopup .bottom .list .item div .remind {
   width: 8vw;
   height: 5.8vw;
   background: var(--pri-dark);
@@ -2343,49 +2387,42 @@ dialog.gamePopup .bottom .list .item div .remind {
           justify-content: center;
   font-size: 3.2vw;
 }
-dialog.gamePopup .bottom .list .item div .fav {
+.filter .popup.gamePopup .bottom .list .item div .fav {
   width: 8vw;
   height: 8vw;
 }
-dialog.realTime, dialog.handicap, dialog.language {
-  top: unset;
-  bottom: 0;
+.filter .popup.tip {
+  bottom: unset;
+  width: 100%;
   height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 2vw;
+  z-index: 10;
 }
-dialog.cart {
-  top: unset;
-  max-height: 90vh;
-  height: auto;
-  bottom: 0;
-}
-dialog.cart .content {
-  display: none;
-  height: 100%;
-}
-dialog.cart .content.display {
+.filter .popup.tip.display ~ .tipbg {
   display: block;
 }
-dialog.cart .content.dataList {
-  height: 90vh;
-}
-dialog.cart .content.dataList .cartDetail {
+.filter .popup.tipbg {
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  height: 100%;
+  background: rgba(194, 197, 214, 0.5019607843);
+  z-index: 9;
 }
-dialog.cart .content.dataList_2 {
-  height: 90vh;
-}
-dialog.cart .content.dataList_2 .cartList {
-  padding-bottom: 78vw;
-}
-dialog.cart .content.dataList_2 .cartDetail {
+.filter .popup.realTime, .filter .popup.handicap, .filter .popup.language {
   width: 100%;
-  height: 55vw;
-  position: fixed;
+  top: unset;
   bottom: 0;
+  height: auto;
 }
-dialog.tip {
+.filter .popup.timeZone {
+  width: 100%;
+  height: 100vh;
+}
+.filter .popup.directions {
   bottom: unset;
   height: auto;
   top: 50%;
@@ -2396,18 +2433,7 @@ dialog.tip {
   border-radius: 2vw;
   overflow: hidden;
 }
-dialog.directions {
-  bottom: unset;
-  height: auto;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 90%;
-  border-radius: 2vw;
-  overflow: hidden;
-}
-dialog .title {
+.filter .popup .title {
   background: var(--gray6);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2418,26 +2444,26 @@ dialog .title {
   height: 11.2vw;
   position: relative;
 }
-dialog .title__name {
+.filter .popup .title__name {
   color: var(--black2);
   font-size: 4.2vw;
   margin-inline: auto;
 }
-dialog .title__btn {
+.filter .popup .title__btn {
   color: var(--gray2);
   font-size: 4.2vw;
   position: absolute;
 }
-dialog .title__btn > i {
+.filter .popup .title__btn > i {
   font-size: 6.4vw;
 }
-dialog .title__btn--left {
+.filter .popup .title__btn--left {
   left: 25px;
 }
-dialog .title__btn--right {
+.filter .popup .title__btn--right {
   right: 25px;
 }
-dialog .title__topNav {
+.filter .popup .title__topNav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2445,7 +2471,7 @@ dialog .title__topNav {
   height: 100%;
   margin-inline: auto;
 }
-dialog .title__topNav > li {
+.filter .popup .title__topNav > li {
   color: var(--gray2);
   border-bottom: 2px solid transparent;
   display: -webkit-box;
@@ -2458,23 +2484,23 @@ dialog .title__topNav > li {
   padding: 0 1vw;
   margin-right: 17px;
 }
-dialog .title__topNav > li:last-child {
+.filter .popup .title__topNav > li:last-child {
   margin-right: 0;
 }
-dialog .title__topNav > li:active, dialog .title__topNav > li.active {
+.filter .popup .title__topNav > li:active, .filter .popup .title__topNav > li.active {
   color: var(--black2);
   border-bottom: 2px solid var(--pri);
 }
-dialog .content {
+.filter .popup .content {
   background: var(--white);
   width: 100%;
 }
-dialog .content .optionList {
+.filter .popup .content .optionList {
   padding-block: 10px;
   max-height: 85vh;
   overflow-y: auto;
 }
-dialog .content .optionList li {
+.filter .popup .content .optionList li {
   color: var(--black2);
   background: var(--white);
   display: -webkit-box;
@@ -2490,29 +2516,29 @@ dialog .content .optionList li {
   font-size: 4.2vw;
   padding-inline: 20px;
 }
-dialog .content .optionList li > i {
+.filter .popup .content .optionList li > i {
   font-size: 4.2vw;
   opacity: 0;
   pointer-events: none;
 }
-dialog .content .optionList li:active, dialog .content .optionList li.active {
+.filter .popup .content .optionList li:active, .filter .popup .content .optionList li.active {
   color: var(--pri);
 }
-dialog .content .optionList li:active > i, dialog .content .optionList li.active > i {
+.filter .popup .content .optionList li:active > i, .filter .popup .content .optionList li.active > i {
   opacity: 1;
 }
-dialog .content .dateWrap {
+.filter .popup .content .dateWrap {
   background: var(--white);
   height: 97px;
   padding-top: 20px;
   padding-inline: 12px;
 }
-dialog .content .dateWrap__text {
+.filter .popup .content .dateWrap__text {
   color: var(--pri);
   font-size: 3.7vw;
   text-align: center;
 }
-dialog .content .dateWrap__section {
+.filter .popup .content .dateWrap__section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2524,11 +2550,11 @@ dialog .content .dateWrap__section {
           justify-content: space-between;
   margin-bottom: 3vw;
 }
-dialog .content .dateWrap__section > span {
+.filter .popup .content .dateWrap__section > span {
   color: var(--black2);
   font-size: 3.7vw;
 }
-dialog .content .dateWrap__input {
+.filter .popup .content .dateWrap__input {
   background: var(--white);
   border: 1px solid var(--gray3);
   display: -webkit-box;
@@ -2542,16 +2568,16 @@ dialog .content .dateWrap__input {
   border-radius: 5px;
   position: relative;
 }
-dialog .content .dateWrap__input > i {
+.filter .popup .content .dateWrap__input > i {
   color: var(--pri);
   font-size: 4.2vw;
   position: absolute;
   left: 11px;
 }
-dialog .content .dateWrap__input > i > i {
+.filter .popup .content .dateWrap__input > i > i {
   font-size: inherit;
 }
-dialog .content .dateWrap__input > input {
+.filter .popup .content .dateWrap__input > input {
   color: var(--black2);
   width: 100%;
   height: 100%;
@@ -2559,14 +2585,14 @@ dialog .content .dateWrap__input > input {
   padding-left: 37px;
   border-radius: 0.8vw;
 }
-dialog .content .dateWrap__input > input:focus {
+.filter .popup .content .dateWrap__input > input:focus {
   border: 1px solid var(--pri);
 }
-dialog .content .dateWrap__input > input.error {
+.filter .popup .content .dateWrap__input > input.error {
   color: var(--error);
   border: 1px solid var(--error);
 }
-dialog .content .operateWrap {
+.filter .popup .content .operateWrap {
   background: var(--white);
   height: 20vw;
   border-top-left-radius: 2vw;
@@ -2580,7 +2606,7 @@ dialog .content .operateWrap {
   -webkit-box-shadow: 0 -0.8vw 1.6vw rgba(0, 0, 0, 0.031372549);
           box-shadow: 0 -0.8vw 1.6vw rgba(0, 0, 0, 0.031372549);
 }
-dialog .content .operateWrap > button {
+.filter .popup .content .operateWrap > button {
   color: var(--white);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
   background: linear-gradient(var(--pri-2), var(--pri));
@@ -2589,10 +2615,10 @@ dialog .content .operateWrap > button {
   font-size: 1rem;
   width: 100%;
 }
-dialog .content .operateWrap > button:active, dialog .content .operateWrap > button.active {
+.filter .popup .content .operateWrap > button:active, .filter .popup .content .operateWrap > button.active {
   background: var(--pri-dark);
 }
-dialog .content .operateWrap > button.del {
+.filter .popup .content .operateWrap > button.del {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2608,17 +2634,17 @@ dialog .content .operateWrap > button.del {
   border: 0.2vw solid var(--error);
   font-size: 4.2vw;
 }
-dialog .content .operateWrap > button.del i {
+.filter .popup .content .operateWrap > button.del i {
   font-size: 5.3vw;
 }
-dialog .content .cartList {
+.filter .popup .content .cartList {
   padding: 2vw;
   background: var(--gray6);
   height: 100%;
   padding-bottom: 50vw;
   overflow-y: scroll;
 }
-dialog .content .cartList .cartItem {
+.filter .popup .content .cartList .cartItem {
   background: var(--white);
   border-radius: 1.6vw;
   -webkit-box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.1607843137);
@@ -2627,7 +2653,7 @@ dialog .content .cartList .cartItem {
   margin-bottom: 2.6vw;
   height: 31vw;
 }
-dialog .content .cartList .cartItem > div {
+.filter .popup .content .cartList .cartItem > div {
   padding: 2.6vw 3.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2636,7 +2662,7 @@ dialog .content .cartList .cartItem > div {
       -ms-flex-align: center;
           align-items: center;
 }
-dialog .content .cartList .cartItem > div.num {
+.filter .popup .content .cartList .cartItem > div.num {
   float: left;
   height: 65%;
   -webkit-box-pack: center;
@@ -2647,13 +2673,13 @@ dialog .content .cartList .cartItem > div.num {
   color: #8396d0;
   padding-right: 0;
 }
-dialog .content .cartList .cartItem > div.top {
+.filter .popup .content .cartList .cartItem > div.top {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 30%;
 }
-dialog .content .cartList .cartItem > div.top .icon {
+.filter .popup .content .cartList .cartItem > div.top .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2662,7 +2688,7 @@ dialog .content .cartList .cartItem > div.top .icon {
           align-items: center;
   gap: 2vw;
 }
-dialog .content .cartList .cartItem > div.top .icon i {
+.filter .popup .content .cartList .cartItem > div.top .icon i {
   background: -webkit-gradient(linear, left top, left bottom, from(var(--sec)), to(var(--sec-dark)));
   background: linear-gradient(var(--sec), var(--sec-dark));
   border-radius: 2.4vw;
@@ -2679,10 +2705,10 @@ dialog .content .cartList .cartItem > div.top .icon i {
       -ms-flex-align: center;
           align-items: center;
 }
-dialog .content .cartList .cartItem > div.top > i {
+.filter .popup .content .cartList .cartItem > div.top > i {
   color: var(--error);
 }
-dialog .content .cartList .cartItem > div.middle {
+.filter .popup .content .cartList .cartItem > div.middle {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -2691,18 +2717,18 @@ dialog .content .cartList .cartItem > div.middle {
   padding: 2vw 0;
   height: 40%;
 }
-dialog .content .cartList .cartItem > div.middle div.center {
+.filter .popup .content .cartList .cartItem > div.middle div.center {
   text-align: center;
   font-size: 3.2vw;
   font-weight: normal;
 }
-dialog .content .cartList .cartItem > div.middle div.center .vs {
+.filter .popup .content .cartList .cartItem > div.middle div.center .vs {
   font-size: 3.7vw;
   color: var(--sec-dark);
   margin-bottom: 1vw;
   font-weight: bold;
 }
-dialog .content .cartList .cartItem > div.bottom {
+.filter .popup .content .cartList .cartItem > div.bottom {
   height: 30%;
   background: -webkit-gradient(linear, left top, right top, from(var(--pri)), to(var(--pri-2)));
   background: linear-gradient(90deg, var(--pri), var(--pri-2));
@@ -2711,7 +2737,7 @@ dialog .content .cartList .cartItem > div.bottom {
           justify-content: space-between;
   color: var(--white);
 }
-dialog .content .carttitle {
+.filter .popup .content .carttitle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2730,7 +2756,7 @@ dialog .content .carttitle {
   gap: 2vw;
   border-radius: 2.6vw 2.6vw 0 0;
 }
-dialog .content .carttitle .num {
+.filter .popup .content .carttitle .num {
   width: 7vw;
   height: 7vw;
   display: -webkit-box;
@@ -2746,7 +2772,7 @@ dialog .content .carttitle .num {
   color: var(--black2);
   border-radius: 2.6vw;
 }
-dialog .content .cartDetail {
+.filter .popup .content .cartDetail {
   background: var(--white);
   height: 38vw;
   border-radius: 2vw 2vw 0 0;
@@ -2754,7 +2780,7 @@ dialog .content .cartDetail {
   -webkit-box-shadow: 0 -0.8vw 1.6vw rgba(0, 0, 0, 0.031372549);
           box-shadow: 0 -0.8vw 1.6vw rgba(0, 0, 0, 0.031372549);
 }
-dialog .content .cartDetail .detailItem {
+.filter .popup .content .cartDetail .detailItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2766,16 +2792,16 @@ dialog .content .cartDetail .detailItem {
           justify-content: space-between;
   padding: 1.8vw 0;
 }
-dialog .content .cartDetail .detailItem.win {
+.filter .popup .content .cartDetail .detailItem.win {
   font-weight: bold;
 }
-dialog .content .cartDetail .detailItem.win p:last-child {
+.filter .popup .content .cartDetail .detailItem.win p:last-child {
   width: 60%;
   font-size: 4.8vw;
   color: var(--success);
   text-align: right;
 }
-dialog .content .cartDetail .detailItem input {
+.filter .popup .content .cartDetail .detailItem input {
   padding: 1.8vw 3.2vw;
   text-align: right;
   border: 0.2vw solid var(--gray3);
@@ -2784,49 +2810,49 @@ dialog .content .cartDetail .detailItem input {
   font-weight: bold;
   width: 60%;
 }
-dialog .content .cartDetail .detailItem input:focus {
+.filter .popup .content .cartDetail .detailItem input:focus {
   border: 1px solid var(--pri);
 }
-dialog .content .cartDetail .detailItem input.error {
+.filter .popup .content .cartDetail .detailItem input.error {
   color: var(--error);
   border: 1px solid var(--error);
 }
-dialog .content .cartDetail .detailBtn {
+.filter .popup .content .cartDetail .detailBtn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1.5vw 1fr 1.5vw 1fr 1.5vw 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5vw;
 }
-dialog .content .cartDetail .detailBtn button {
+.filter .popup .content .cartDetail .detailBtn button {
   font-size: 3.7vw;
   padding: 1.5vw 0;
   border: 0.2vw solid #9aa0bf;
   color: #9aa0bf;
   border-radius: 1.6vw;
 }
-dialog .content .cartDetail .detailBtn button:nth-last-child(-n+2) {
+.filter .popup .content .cartDetail .detailBtn button:nth-last-child(-n+2) {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
 }
-dialog .content .cartDetail .detailBtn button:last-child {
+.filter .popup .content .cartDetail .detailBtn button:last-child {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-column: 3/5;
 }
-dialog .content .cartDetail .detailBtn button:active, dialog .content .cartDetail .detailBtn button.active {
+.filter .popup .content .cartDetail .detailBtn button:active, .filter .popup .content .cartDetail .detailBtn button.active {
   color: var(--white);
   background: #324fb1;
   border: none;
 }
-dialog .content .cartDetail .btnBlock {
+.filter .popup .content .cartDetail .btnBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 2vw;
 }
-dialog .content .cartDetail .btnBlock button {
+.filter .popup .content .cartDetail .btnBlock button {
   color: var(--white);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
   background: linear-gradient(var(--pri-2), var(--pri));
@@ -2835,10 +2861,10 @@ dialog .content .cartDetail .btnBlock button {
   font-size: 1rem;
   width: 100%;
 }
-dialog .content .cartDetail .btnBlock button:active, dialog .content .cartDetail .btnBlock button.active {
+.filter .popup .content .cartDetail .btnBlock button:active, .filter .popup .content .cartDetail .btnBlock button.active {
   background: var(--pri-dark);
 }
-dialog .content .cartDetail .btnBlock button.del {
+.filter .popup .content .cartDetail .btnBlock button.del {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2853,10 +2879,10 @@ dialog .content .cartDetail .btnBlock button.del {
   color: var(--error);
   border: 0.2vw solid var(--error);
 }
-dialog .content .cartDetail .btnBlock button.del i {
+.filter .popup .content .cartDetail .btnBlock button.del i {
   font-size: 5.3vw;
 }
-dialog .content .noDataWrap {
+.filter .popup .content .noDataWrap {
   background: var(--gray6);
   height: 50vw;
   display: -webkit-box;
@@ -2870,19 +2896,19 @@ dialog .content .noDataWrap {
       -ms-flex-align: center;
           align-items: center;
 }
-dialog .content .noDataWrap > i {
+.filter .popup .content .noDataWrap > i {
   color: var(--gray3);
   font-size: 20vw;
   margin-top: 8vw;
   margin-bottom: 4vw;
 }
-dialog .content .noDataWrap > p {
+.filter .popup .content .noDataWrap > p {
   color: var(--black2);
   font-size: 4.2vw;
   font-weight: bold;
   text-align: center;
 }
-dialog .content .msgWrap {
+.filter .popup .content .msgWrap {
   background: var(--white);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2898,13 +2924,13 @@ dialog .content .msgWrap {
   padding-bottom: 20px;
   margin: 2vw 0;
 }
-dialog .content .msgWrap > p {
+.filter .popup .content .msgWrap > p {
   color: var(--black2);
   line-height: 1.2;
   padding: 15px 0;
   font-size: 4.5vw;
 }
-dialog .content .msgWrap .btnBox {
+.filter .popup .content .msgWrap .btnBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2913,11 +2939,11 @@ dialog .content .msgWrap .btnBox {
           justify-content: center;
   width: 100%;
 }
-dialog .content .msgWrap .btnBox > button {
+.filter .popup .content .msgWrap .btnBox > button {
   width: 50%;
   margin-right: 10px;
 }
-dialog .content .msgWrap .btnBox > button:first-child {
+.filter .popup .content .msgWrap .btnBox > button:first-child {
   color: var(--white);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
   background: linear-gradient(var(--pri-2), var(--pri));
@@ -2927,10 +2953,10 @@ dialog .content .msgWrap .btnBox > button:first-child {
   color: var(--black2);
   background: #d7d7d7;
 }
-dialog .content .msgWrap .btnBox > button:first-child:active, dialog .content .msgWrap .btnBox > button:first-child.active {
+.filter .popup .content .msgWrap .btnBox > button:first-child:active, .filter .popup .content .msgWrap .btnBox > button:first-child.active {
   background: var(--pri-dark);
 }
-dialog .content .msgWrap .btnBox > button:last-child {
+.filter .popup .content .msgWrap .btnBox > button:last-child {
   color: var(--white);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
   background: linear-gradient(var(--pri-2), var(--pri));
@@ -2939,158 +2965,158 @@ dialog .content .msgWrap .btnBox > button:last-child {
   font-size: 1rem;
   margin-right: 0;
 }
-dialog .content .msgWrap .btnBox > button:last-child:active, dialog .content .msgWrap .btnBox > button:last-child.active {
+.filter .popup .content .msgWrap .btnBox > button:last-child:active, .filter .popup .content .msgWrap .btnBox > button:last-child.active {
   background: var(--pri-dark);
 }
 
-[theme=dark] dialog {
+[theme=dark] .filter {
+  background: rgba(0, 0, 0, 0.5019607843);
+}
+[theme=dark] .filter .popup {
   background: var(--black2);
 }
-[theme=dark] dialog[open]::-ms-backdrop {
-  background: rgba(0, 0, 0, 0.5019607843);
-}
-[theme=dark] dialog[open]::backdrop {
-  background: rgba(0, 0, 0, 0.5019607843);
-}
-[theme=dark] dialog.gamePopup .top {
+[theme=dark] .filter .popup.gamePopup .top {
   background: var(--gray1);
   color: var(--white);
 }
-[theme=dark] dialog.gamePopup .bottom .title .icon i {
+[theme=dark] .filter .popup.gamePopup .bottom .title .icon i {
   background: -webkit-gradient(linear, left top, left bottom, from(#fcde6d), to(#cea611));
   background: linear-gradient(180deg, #fcde6d, #cea611);
 }
-[theme=dark] dialog.gamePopup .bottom .title input {
+[theme=dark] .filter .popup.gamePopup .bottom .title input {
   border: 0.2vw solid var(--unnamed-color-42444d);
 }
-[theme=dark] dialog.gamePopup .bottom .title input::-webkit-input-placeholder {
+[theme=dark] .filter .popup.gamePopup .bottom .title input::-webkit-input-placeholder {
   color: var(--gray2);
 }
-[theme=dark] dialog.gamePopup .bottom .title input::-moz-placeholder {
+[theme=dark] .filter .popup.gamePopup .bottom .title input::-moz-placeholder {
   color: var(--gray2);
 }
-[theme=dark] dialog.gamePopup .bottom .title input:-ms-input-placeholder {
+[theme=dark] .filter .popup.gamePopup .bottom .title input:-ms-input-placeholder {
   color: var(--gray2);
 }
-[theme=dark] dialog.gamePopup .bottom .title input::-ms-input-placeholder {
+[theme=dark] .filter .popup.gamePopup .bottom .title input::-ms-input-placeholder {
   color: var(--gray2);
 }
-[theme=dark] dialog.gamePopup .bottom .title input::placeholder {
+[theme=dark] .filter .popup.gamePopup .bottom .title input::placeholder {
   color: var(--gray2);
 }
-[theme=dark] dialog.gamePopup .bottom .list .item {
+[theme=dark] .filter .popup.gamePopup .bottom .list .item {
   background: var(--gray1);
   color: var(--gray6);
 }
-[theme=dark] dialog.gamePopup .bottom .list .item div .remind {
+[theme=dark] .filter .popup.gamePopup .bottom .list .item div .remind {
   background: var(--pri);
 }
-[theme=dark] dialog .title {
+[theme=dark] .filter .popup.tipbg {
+  background: rgba(0, 0, 0, 0.5019607843);
+}
+[theme=dark] .filter .popup .title {
   background: var(--gray1);
 }
-[theme=dark] dialog .title__name {
+[theme=dark] .filter .popup .title__name {
   color: var(--white);
 }
-[theme=dark] dialog .title__btn {
+[theme=dark] .filter .popup .title__btn {
   color: var(--gray2);
 }
-[theme=dark] dialog .title__topNav > li {
+[theme=dark] .filter .popup .title__topNav > li {
   color: var(--gray2);
 }
-[theme=dark] dialog .title__topNav > li:active, [theme=dark] dialog .title__topNav > li.active {
+[theme=dark] .filter .popup .title__topNav > li:active, [theme=dark] .filter .popup .title__topNav > li.active {
   color: var(--white);
   border-bottom: 2px solid var(--pri);
 }
-[theme=dark] dialog .content {
+[theme=dark] .filter .popup .content {
   background: var(--black2);
 }
-[theme=dark] dialog .content .optionList li {
+[theme=dark] .filter .popup .content .optionList li {
   color: var(--gray3);
   background: var(--gray1);
 }
-[theme=dark] dialog .content .optionList li:active, [theme=dark] dialog .content .optionList li.active {
+[theme=dark] .filter .popup .content .optionList li:active, [theme=dark] .filter .popup .content .optionList li.active {
   color: var(--sec);
 }
-[theme=dark] dialog .content .dateWrap {
+[theme=dark] .filter .popup .content .dateWrap {
   background: var(--black2);
   background: var(--black2);
 }
-[theme=dark] dialog .content .dateWrap__text {
+[theme=dark] .filter .popup .content .dateWrap__text {
   color: var(--gray2);
 }
-[theme=dark] dialog .content .dateWrap__section > span {
+[theme=dark] .filter .popup .content .dateWrap__section > span {
   color: var(--black2);
 }
-[theme=dark] dialog .content .dateWrap__input > button {
+[theme=dark] .filter .popup .content .dateWrap__input > button {
   color: var(--pri);
 }
-[theme=dark] dialog .content .dateWrap__input > input {
+[theme=dark] .filter .popup .content .dateWrap__input > input {
   color: var(--white);
   border: 1px solid var(--unnamed-color-42444d);
   background: var(--black2);
 }
-[theme=dark] dialog .content .operateWrap {
+[theme=dark] .filter .popup .content .operateWrap {
   background: var(--gray1);
 }
-[theme=dark] dialog .content .operateWrap > button {
+[theme=dark] .filter .popup .content .operateWrap > button {
   background: -webkit-gradient(linear, left top, left bottom, from(#1f3fac), to(#3c5edb));
   background: linear-gradient(#1f3fac, #3c5edb);
 }
-[theme=dark] dialog .content .noDataWrap {
+[theme=dark] .filter .popup .content .noDataWrap {
   background: var(--black2);
 }
-[theme=dark] dialog .content .noDataWrap > i {
+[theme=dark] .filter .popup .content .noDataWrap > i {
   color: var(--gray3);
 }
-[theme=dark] dialog .content .noDataWrap > p {
+[theme=dark] .filter .popup .content .noDataWrap > p {
   color: var(--gray2);
 }
-[theme=dark] dialog .content .cartList {
+[theme=dark] .filter .popup .content .cartList {
   background: var(--dark2);
 }
-[theme=dark] dialog .content .cartList .cartItem {
+[theme=dark] .filter .popup .content .cartList .cartItem {
   background: var(--gray1);
 }
-[theme=dark] dialog .content .cartList .cartItem > div.top .icon i {
+[theme=dark] .filter .popup .content .cartList .cartItem > div.top .icon i {
   background: -webkit-gradient(linear, left top, left bottom, from(var(--sec)), to(var(--sec-dark)));
   background: linear-gradient(var(--sec), var(--sec-dark));
   color: var(--black1);
 }
-[theme=dark] dialog .content .cartList .cartItem > div.middle div.center .date {
+[theme=dark] .filter .popup .content .cartList .cartItem > div.middle div.center .date {
   color: var(--gray2);
 }
-[theme=dark] dialog .content .cartList .cartItem > div.bottom {
+[theme=dark] .filter .popup .content .cartList .cartItem > div.bottom {
   background: -webkit-gradient(linear, left top, right top, from(#354c9f), to(#1d3176));
   background: linear-gradient(90deg, #354c9f, #1d3176);
   color: var(--white);
 }
-[theme=dark] dialog .content .cartDetail {
+[theme=dark] .filter .popup .content .cartDetail {
   background: var(--gray1);
 }
-[theme=dark] dialog .content .cartDetail .detailItem input {
+[theme=dark] .filter .popup .content .cartDetail .detailItem input {
   color: var(--white);
   background: var(--black2);
   border: 0.2vw solid var(--unnamed-color-42444d);
 }
-[theme=dark] dialog .content .cartDetail .detailItem input:focus {
+[theme=dark] .filter .popup .content .cartDetail .detailItem input:focus {
   border: 1px solid var(--pri);
 }
-[theme=dark] dialog .content .cartDetail .detailItem input.error {
+[theme=dark] .filter .popup .content .cartDetail .detailItem input.error {
   color: var(--error);
   border: 1px solid var(--error);
 }
-[theme=dark] dialog .content .cartDetail .btnBlock button {
+[theme=dark] .filter .popup .content .cartDetail .btnBlock button {
   background: -webkit-gradient(linear, left top, left bottom, from(#1f3fac), to(#3c5edb));
   background: linear-gradient(#1f3fac, #3c5edb);
 }
-[theme=dark] dialog .content .cartDetail .btnBlock button.del {
+[theme=dark] .filter .popup .content .cartDetail .btnBlock button.del {
   background: var(--gray1);
   color: var(--error);
 }
-[theme=dark] dialog .content .msgWrap {
+[theme=dark] .filter .popup .content .msgWrap {
   background: var(--gray1);
 }
-[theme=dark] dialog .content .msgWrap > p {
+[theme=dark] .filter .popup .content .msgWrap > p {
   color: var(--gray3);
 }
 

@@ -2,6 +2,7 @@
 // 引入模組
 import { removeEv, clickEv } from "./module.js"
 const body = document.body
+const filter = document.querySelector(".filter")
 ;(() => {
   const gameNav = document.querySelector(".gameNav")
   if (!gameNav) return
@@ -57,67 +58,52 @@ const body = document.body
   }
 })()
 
-// 關閉彈窗
+// // 關閉彈窗
 ;(() => {
-  const closes = document.querySelectorAll(".dialogBlock button.close")
+  const closes = filter.querySelectorAll("button.close")
   if (!closes) return
   closes.forEach((close) => {
     close.addEventListener("click", () => {
-      const dialogs = document.querySelector("dialog[open]")
-      dialogs.close()
+      filter.classList.remove("display")
+      filter.querySelector(".popup.display").classList.remove("display")
     })
   })
 })()
-;(() => {
-  const dialog = document.querySelectorAll("dialog")
-  if (!dialog) return
-  dialog.forEach((item) =>
-    item.addEventListener("click", (e) => {
-      if (e.target.tagName === "DIALOG") {
-        item.close()
-      }
-    })
-  )
-})()
 
-// 購物車功能
+// // 購物車功能
 ;(() => {
   const cart = document.querySelector("aside section.cart")
   if (!cart) return
-  const cartPopup = document.querySelector(".dialogBlock dialog.cart")
+  const cartPopup = filter.querySelector(".popup.cart")
   const back = cartPopup.querySelector(".operateWrap button")
   cart.addEventListener("click", () => {
-    cartPopup.showModal()
+    filter.classList.add("display")
+    cartPopup.classList.add("display")
   })
   back.addEventListener("click", () => {
-    cartPopup.close()
+    filter.classList.remove("display")
+    cartPopup.classList.remove("display")
   })
 })()
-// 清空購物車
+// // 清空購物車
 ;(() => {
-  const del = document.querySelector("dialog.cart .cartDetail button.del")
+  const del = filter.querySelector(".popup.cart .cartDetail button.del")
   if (!del) return
   del.addEventListener("click", () => {
-    document
-      .querySelector("dialog.cart .content.display")
-      .classList.remove("display")
-    document
-      .querySelector("dialog.cart .content.noData")
-      .classList.add("display")
+    filter.querySelector(".cart .content.display").classList.remove("display")
+    filter.querySelector(".cart .content.noData").classList.add("display")
   })
 })()
-// 送出購物車
+// // 送出購物車
 ;(() => {
-  const submit = document.querySelector("dialog.cart .cartDetail button.submit")
+  const submit = filter.querySelector(".cart .cartDetail button.submit")
   if (!submit) return
   submit.addEventListener("click", () => {
-    const value = document.querySelector("dialog.cart .cartDetail input").value
+    const value = filter.querySelector(".cart .cartDetail input").value
     if (value > 100) {
-      document.querySelector("dialog.tip--default").showModal()
+      filter.querySelector(".tip--default").classList.add('display')
     } else if (value <= 100) {
-      document.querySelector("dialog.tip--secondary").showModal()
-    } else {
-      document.querySelector("dialog[open]").close()
+      filter.querySelector(".tip--secondary").classList.add('display')
     }
   })
 })()
@@ -145,22 +131,23 @@ const body = document.body
   )
 })()
 
-//球類彈窗
+// //球類彈窗
 ;(() => {
   const gameNav = document.querySelectorAll(".topNav .navList .navItem")
   if (!gameNav) return
   gameNav.forEach((item) =>
     item.addEventListener("click", function (e) {
       const id = this.dataset.nav
-      const dialog = document.querySelector(`dialog[data-game=${id}]`)
-      if (!dialog) return
-      dialog.showModal()
+      const gamePopup = filter.querySelector(`.gamePopup[data-game=${id}]`)
+      if (!gamePopup) return
+      filter.classList.add('display')
+      gamePopup.classList.add('display')
     })
   )
 })()
-// 球類切換
+// // 球類切換
 ;(() => {
-  const gamePopup = document.querySelectorAll("dialog.gamePopup .list")
+  const gamePopup = filter.querySelectorAll(".gamePopup .list")
   if (!gamePopup) return
   gamePopup.forEach((item) =>
     item.addEventListener("click", function (e) {
@@ -171,7 +158,7 @@ const body = document.body
         }
         const gameNav = document.querySelectorAll(".topNav .navList .navItem")
         gameNav.forEach((item) => item.classList.remove("active"))
-        const open = document.querySelector("dialog[open]")
+        const open = document.querySelector(".gamePopup.display")
         const id = open.dataset.game
         gameNav.forEach((item) => {
           if (item.dataset.nav === id) {
@@ -180,37 +167,40 @@ const body = document.body
         })
         document.querySelector(`main.display`).classList.remove("display")
         document.querySelector(`main[data-main=${id}]`).classList.add("display")
-        open.close()
+        filter.classList.remove('display')
+        open.classList.remove('display')
       }
     })
   )
 })()
-// 返回
+// // 返回
 ;(() => {
-  const back = document.querySelectorAll("dialog.gamePopup .top i")
+  const back = filter.querySelectorAll(".gamePopup .top i")
   if (!back) return
   back.forEach((item) =>
     item.addEventListener("click", () => {
-      const open = document.querySelector("dialog[open]")
-      open.close()
+      const open = document.querySelector(".gamePopup.display")
+      filter.classList.remove('display')
+      open.classList.remove('display')
     })
   )
 })()
 
-// 設定頁 開啟彈窗
+// // 設定頁 開啟彈窗
 ;(() => {
-  const dialogBtn = document.querySelectorAll(".settingPage li")
-  if (!dialogBtn) return
-  dialogBtn.forEach((item) =>
+  const popupBtn = document.querySelectorAll(".settingPage li")
+  if (!popupBtn) return
+  popupBtn.forEach((item) =>
     item.addEventListener("click", function () {
       const id = this.dataset.popup
       if (!id) return
-      document.querySelector(`dialog.${id}`).showModal()
+      filter.classList.add('display')
+      filter.querySelector(`.popup.${id}`).classList.add('display')
     })
   )
 })()
 
-// 注單頁 日期按鈕+自訂義彈窗
+// // 注單頁 日期按鈕+自訂義彈窗
 ;(() => {
   const dateBtn = document.querySelectorAll(".innerNav .dateList button")
   if (!dateBtn) return
@@ -231,16 +221,17 @@ const body = document.body
         }
         item.classList.add("active")
       } else {
-        const realTime = document.querySelector("dialog.realTime")
+        const realTime = filter.querySelector(".popup.realTime")
         if (!realTime) return
-        realTime.showModal()
+        filter.classList.add('display')
+        realTime.classList.add('display')
       }
     })
   )
 })()
-// 自訂義彈窗確認
+// // 自訂義彈窗確認
 ;(() => {
-  const submit = document.querySelector("dialog.realTime .operateWrap button")
+  const submit = filter.querySelector(".popup.realTime .operateWrap button")
   if (!submit) return
   submit.addEventListener("click", () => {
     const dateBtn = document.querySelectorAll(".innerNav .dateList button")
@@ -259,49 +250,51 @@ const body = document.body
       history.querySelector(".cus").classList.add("display")
       document.querySelector(".innerNav .detail .num").classList.remove("up")
     }
-    document.querySelector("dialog.realTime").close()
+    filter.classList.remove('display')
+    filter.querySelector(".popup.realTime").classList.remove('display')
   })
 })()
 
-// 提示彈窗 關閉
+// // 提示彈窗 關閉
 ;(() => {
-  const checks = document.querySelectorAll("dialog.tip button.checks")
+  const checks = filter.querySelectorAll(".tip button.checks")
   if (!checks) return
   checks.forEach((item) =>
     item.addEventListener("click", () => {
-      const tip = document.querySelector("dialog.tip[open]")
-      tip.close()
+      const tip = filter.querySelector(".tip.display")
+      tip.classList.remove('display')
     })
   )
 })()
 ;(() => {
-  const close = document.querySelectorAll("dialog.tip .title .tip_close")
+  const close = filter.querySelectorAll(".tip .title .tip_close")
   if (!close) return
   close.forEach((item) =>
     item.addEventListener("click", () => {
-      const tip = document.querySelector("dialog.tip[open]")
-      tip.close()
+      const tip = filter.querySelector(".tip.display")
+      tip.classList.remove('display')
     })
   )
 })()
-// 提示彈窗 送出
+// // 提示彈窗 送出
 ;(() => {
-  const submit = document.querySelector("dialog.tip button.submit")
+  const submit = filter.querySelector(".tip button.submit")
   if (!submit) return
   submit.addEventListener("click", () => {
-    const dialogs = document.querySelectorAll("dialog[open]")
-    dialogs.forEach((item) => item.close())
+    const dialogs = filter.querySelectorAll(".popup.display")
+    filter.classList.remove('display')
+    dialogs.forEach((item) => item.classList.remove('display'))
   })
 })()
 
-// 購物車彈窗 單場/串關切換
+// // 購物車彈窗 單場/串關切換
 ;(() => {
-  const tabs = document.querySelectorAll("#titleTopNavOptions li")
+  const tabs = filter.querySelectorAll("#titleTopNavOptions li")
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", function () {
       tabs.forEach((item) => item.classList.remove("active"))
       tab.classList.add("active")
-      const content = document.querySelectorAll("dialog.cart .content")
+      const content = filter.querySelectorAll(".popup.cart .content")
       content.forEach((item) => item.classList.remove("display"))
       content[index].classList.add("display")
     })

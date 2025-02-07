@@ -1,520 +1,364 @@
 @use "./colorStyle" as style;
 
-dialog {
-  all: unset;
+.filter {
+  background: #c2c5d680;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 99;
-  width: 100%;
-  height: 100vh;
-  background: var(--white);
   display: none;
-  border-radius: 2.6vw 2.6vw 0 0;
-  overflow: hidden;
-  &[open] {
+  transition: all 0.5s;
+  &.display {
     display: block;
-    &::backdrop {
-      background: #c2c5d680;
-    }
   }
-  &.gamePopup {
-    .top {
-      width: 100%;
-      height: 11.2vw;
-      padding: 0 4.2vw;
-      background: var(--white);
-      position: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--black2);
-      font-size: 4.2vw;
-      font-weight: bold;
-      z-index: 99;
-      i {
-        left: 4.2vw;
-        position: absolute;
-        color: var(--gray2);
-        font-size: 6.4vw;
-      }
-    }
-    .bottom {
-      height: 100%;
-      padding-top: 11.2vw;
-      overflow-y: scroll;
-      .title {
-        display: flex;
-        justify-content: space-between;
-        padding: 1vw 3.2vw;
-        .icon {
-          display: flex;
-          align-items: center;
-          gap: 2vw;
-          i {
-            color: var(--black1);
-            width: 9.6vw;
-            height: 9.6vw;
-            background: linear-gradient(180deg, var(--sec), var(--sec-dark));
-            border-radius: 3.2vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          p {
-            font-weight: bold;
-            font-size: 4.2vw;
-            font-weight: bold;
-          }
-        }
-        input {
-          border: 0.2vw solid var(--gray3);
-          padding: 1.8vw 4.2vw;
-          border-radius: 1.6vw;
-          &::placeholder {
-            color: var(--gray2);
-          }
-        }
-      }
-      .list {
-        padding: 2vw;
-        .item {
-          margin-bottom: 1.5vw;
-          border-radius: 1.6vw;
-          background: var(--gray6);
-          padding: 2vw;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: var(--black2);
-          font-weight: bold;
-          div {
-            display: flex;
-            align-items: center;
-            gap: 2vw;
-            .remind {
-              width: 8vw;
-              height: 5.8vw;
-              background: var(--pri-dark);
-              border-radius: 3.2vw;
-              color: var(--white);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 3.2vw;
-            }
-            .fav {
-              width: 8vw;
-              height: 8vw;
-            }
-          }
-        }
-      }
-    }
-  }
-  // 注單彈窗
-  &.realTime,
-  // 盤口設置
-  &.handicap, 
-  // 語言切換
-  &.language {
-    top: unset;
-    bottom: 0;
-    height: auto;
-  }
-  &.cart {
-    top: unset;
-    max-height: 90vh;
-    height: auto;
-    bottom: 0;
-    .content {
-      display: none;
-      height: 100%;
-      &.display {
-        display: block;
-      }
-      &.dataList {
-        height: 90vh;
-        .cartDetail {
-          width: 100%;
-          position: fixed;
-          bottom: 0;
-        }
-      }
-      &.dataList_2 {
-        height: 90vh;
-        .cartList {
-          padding-bottom: 78vw;
-        }
-        .cartDetail {
-          width: 100%;
-          height: 55vw;
-          position: fixed;
-          bottom: 0;
-        }
-      }
-    }
-  }
-  &.tip {
-    bottom: unset;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    border-radius: 2vw;
-    overflow: hidden;
-  }
-  &.directions {
-    bottom: unset;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    border-radius: 2vw;
-    overflow: hidden;
-  }
-  // 組件
-  .title {
-    background: var(--gray6);
-    display: flex;
-    align-items: center;
-    height: 11.2vw;
-    position: relative;
-    &__name {
-      color: var(--black2);
-      font-size: 4.2vw;
-      margin-inline: auto;
-    }
-    &__btn {
-      color: var(--gray2);
-      font-size: 4.2vw;
-      position: absolute;
 
-      > i {
-        font-size: 6.4vw;
-      }
-      &--left {
-        left: 25px;
-      }
-
-      &--right {
-        right: 25px;
-      }
-    }
-    &__topNav {
-      display: flex;
-      width: 70%;
-      height: 100%;
-      margin-inline: auto;
-      > li {
-        color: var(--gray2);
-        border-bottom: 2px solid transparent;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        padding: 0 1vw;
-        margin-right: 17px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        &:active,
-        &.active {
-          color: var(--black2);
-          border-bottom: 2px solid var(--pri);
-        }
-      }
-    }
-  }
-  .content {
+  .popup {
+    width: auto;
+    height: auto;
+    position: absolute;
     background: var(--white);
-    width: 100%;
-    .optionList {
-      padding-block: 10px;
-      max-height: 85vh;
-      overflow-y: auto;
-      li {
-        color: var(--black2);
-        background: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 11.2vw;
-        font-size: 4.2vw;
-        padding-inline: 20px;
-        > i {
-          font-size: 4.2vw;
-          opacity: 0;
-          pointer-events: none;
+    z-index: 9;
+    display: none;
+    border-radius: 2.6vw 2.6vw 0 0;
+    overflow: hidden;
+    &.display {
+      display: block;
+    }
+    &.cart {
+      width: 100%;
+      max-height: 90vh;
+      height: auto;
+      bottom: 0;
+      .content {
+        display: none;
+        height: 100%;
+        &.display {
+          display: block;
         }
-        &:active,
-        &.active {
-          color: var(--pri);
-
-          > i {
-            opacity: 1;
+        &.dataList {
+          height: 90vh;
+          position: relative;
+          .cartDetail {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+          }
+        }
+        &.dataList_2 {
+          height: 90vh;
+          .cartList {
+            padding-bottom: 78vw;
+          }
+          .cartDetail {
+            width: 100%;
+            height: 55vw;
+            position: fixed;
+            bottom: 0;
           }
         }
       }
     }
-    // 組件
-    .dateWrap {
-      background: var(--white);
-      height: 97px;
-      padding-top: 20px;
-      padding-inline: 12px;
-      &__text {
-        color: var(--pri);
-        font-size: 3.7vw;
-        text-align: center;
-      }
-      &__section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 3vw;
-
-        > span {
-          color: var(--black2);
-          font-size: 3.7vw;
-        }
-      }
-      &__input {
-        background: var(--white);
-        border: 1px solid var(--gray3);
-        display: flex;
-        align-items: center;
-        width: 45%;
-        height: 34px;
-        border-radius: 5px;
-        position: relative;
-        > i {
-          color: var(--pri);
-          font-size: 4.2vw;
-          position: absolute;
-          left: 11px;
-          > i {
-            font-size: inherit;
-          }
-        }
-        > input {
-          color: var(--black2);
-          width: 100%;
-          height: 100%;
-          font-size: 4.2vw;
-          padding-left: 37px;
-          border-radius: 0.8vw;
-          &:focus {
-            border: 1px solid var(--pri);
-          }
-
-          &.error {
-            color: var(--error);
-            border: 1px solid var(--error);
-          }
-        }
-      }
-    }
-    // 組件
-    .operateWrap {
-      background: var(--white);
-      height: 20vw;
-      border-top-left-radius: 2vw;
-      border-top-right-radius: 2vw;
-      padding-top: 5.3vw;
-      padding-inline: 3.2vw;
-      display: flex;
-      gap: 2vw;
-      box-shadow: 0 -0.8vw 1.6vw #00000008;
-      > button {
-        @include style.btnStyle_base;
+    &.gamePopup {
+      width: 100%;
+      height: 100vh;
+      .top {
         width: 100%;
-        &.del {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 60%;
-          background: var(--white);
-          color: var(--error);
-          border: 0.2vw solid var(--error);
-          font-size: 4.2vw;
-          i {
-            font-size: 5.3vw;
-          }
-        }
-      }
-    }
-    // 組件
-    .cartList {
-      padding: 2vw;
-      background: var(--gray6);
-      height: 100%;
-      padding-bottom: 50vw;
-      overflow-y: scroll;
-      .cartItem {
+        height: 11.2vw;
+        padding: 0 4.2vw;
         background: var(--white);
-        border-radius: 1.6vw;
-        box-shadow: 0 0.8vw 1.6vw #00000029;
-        overflow: hidden;
-        margin-bottom: 2.6vw;
-        height: 31vw;
-        > div {
-          padding: 2.6vw 3.5vw;
-          display: flex;
-          align-items: center;
-          &.num {
-            float: left;
-            height: 65%;
-            justify-content: center;
-            font-size: 6vw;
-            font-weight: bold;
-            color: #8396d0;
-            padding-right: 0;
-          }
-          &.top {
-            justify-content: space-between;
-            height: 30%;
-            .icon {
-              display: flex;
-              align-items: center;
-              gap: 2vw;
-              i {
-                background: linear-gradient(var(--sec), var(--sec-dark));
-                border-radius: 2.4vw;
-                width: 6.6vw;
-                height: 6.9vw;
-                font-size: 5.6vw;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              }
-            }
-            > i {
-              color: var(--error);
-            }
-          }
-          &.middle {
-            justify-content: space-evenly;
-            font-size: 4.2vw;
-            font-weight: bold;
-            padding: 2vw 0;
-            height: 40%;
-            div {
-              &.center {
-                text-align: center;
-                font-size: 3.2vw;
-                font-weight: normal;
-                .vs {
-                  font-size: 3.7vw;
-                  color: var(--sec-dark);
-                  margin-bottom: 1vw;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-          &.bottom {
-            height: 30%;
-            background: linear-gradient(90deg, var(--pri), var(--pri-2));
-            justify-content: space-between;
-            color: var(--white);
-          }
-        }
-      }
-    }
-    // 組件
-    .carttitle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #646ccb;
-      margin-top: 1vw;
-      color: var(--white);
-      padding: 1.6vw;
-      font-size: 4.7vw;
-      font-weight: bold;
-      gap: 2vw;
-      border-radius: 2.6vw 2.6vw 0 0;
-      .num {
-        width: 7vw;
-        height: 7vw;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--sec-dark);
         color: var(--black2);
-        border-radius: 2.6vw;
+        font-size: 4.2vw;
+        font-weight: bold;
+        z-index: 99;
+        i {
+          left: 4.2vw;
+          position: absolute;
+          color: var(--gray2);
+          font-size: 6.4vw;
+        }
+      }
+      .bottom {
+        height: 100%;
+        padding-top: 11.2vw;
+        overflow-y: scroll;
+        .title {
+          display: flex;
+          justify-content: space-between;
+          padding: 1vw 3.2vw;
+          .icon {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+            i {
+              color: var(--black1);
+              width: 9.6vw;
+              height: 9.6vw;
+              background: linear-gradient(180deg, var(--sec), var(--sec-dark));
+              border-radius: 3.2vw;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            p {
+              font-weight: bold;
+              font-size: 4.2vw;
+              font-weight: bold;
+            }
+          }
+          input {
+            border: 0.2vw solid var(--gray3);
+            padding: 1.8vw 4.2vw;
+            border-radius: 1.6vw;
+            &::placeholder {
+              color: var(--gray2);
+            }
+          }
+        }
+        .list {
+          padding: 2vw;
+          .item {
+            margin-bottom: 1.5vw;
+            border-radius: 1.6vw;
+            background: var(--gray6);
+            padding: 2vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--black2);
+            font-weight: bold;
+            div {
+              display: flex;
+              align-items: center;
+              gap: 2vw;
+              .remind {
+                width: 8vw;
+                height: 5.8vw;
+                background: var(--pri-dark);
+                border-radius: 3.2vw;
+                color: var(--white);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3.2vw;
+              }
+              .fav {
+                width: 8vw;
+                height: 8vw;
+              }
+            }
+          }
+        }
       }
     }
-    // 組件
-    .cartDetail {
-      background: var(--white);
-      height: 38vw;
-      border-radius: 2vw 2vw 0 0;
-      padding: 2vw 3.2vw;
-      box-shadow: 0 -0.8vw 1.6vw #00000008;
-      .detailItem {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.8vw 0;
-        &.win {
-          font-weight: bold;
-          p:last-child {
-            width: 60%;
-            font-size: 4.8vw;
-            color: var(--success);
-            text-align: right;
-          }
+    &.tip {
+      bottom: unset;
+      width: 100%;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      border-radius: 2vw;
+      z-index: 10;
+      &.display {
+        & ~ .tipbg {
+          display: block;
         }
-        input {
-          padding: 1.8vw 3.2vw;
-          text-align: right;
-          border: 0.2vw solid var(--gray3);
-          border-radius: 1.6vw;
-          font-size: 4.2vw;
-          font-weight: bold;
-          width: 60%;
-          &:focus {
-            border: 1px solid var(--pri);
+      }
+    }
+    // 提示彈窗 遮罩
+    &.tipbg {
+      width: 100%;
+      height: 100%;
+      background: #c2c5d680;
+      z-index: 9;
+    }
+    // 注單彈窗
+    &.realTime,
+    // 盤口設置
+    &.handicap, 
+    // 語言切換
+    &.language {
+      width: 100%;
+      top: unset;
+      bottom: 0;
+      height: auto;
+    }
+    &.timeZone {
+      width: 100%;
+      height: 100vh;
+    }
+    &.directions {
+      bottom: unset;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      border-radius: 2vw;
+      overflow: hidden;
+    }
+    // 組件
+    .title {
+      background: var(--gray6);
+      display: flex;
+      align-items: center;
+      height: 11.2vw;
+      position: relative;
+      &__name {
+        color: var(--black2);
+        font-size: 4.2vw;
+        margin-inline: auto;
+      }
+      &__btn {
+        color: var(--gray2);
+        font-size: 4.2vw;
+        position: absolute;
+
+        > i {
+          font-size: 6.4vw;
+        }
+        &--left {
+          left: 25px;
+        }
+
+        &--right {
+          right: 25px;
+        }
+      }
+      &__topNav {
+        display: flex;
+        width: 70%;
+        height: 100%;
+        margin-inline: auto;
+        > li {
+          color: var(--gray2);
+          border-bottom: 2px solid transparent;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 0 1vw;
+          margin-right: 17px;
+
+          &:last-child {
+            margin-right: 0;
           }
-          &.error {
-            color: var(--error);
-            border: 1px solid var(--error);
+
+          &:active,
+          &.active {
+            color: var(--black2);
+            border-bottom: 2px solid var(--pri);
           }
         }
       }
-      .detailBtn {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5vw;
-        button {
-          font-size: 3.7vw;
-          padding: 1.5vw 0;
-          border: 0.2vw solid #9aa0bf;
-          color: #9aa0bf;
-          border-radius: 1.6vw;
-          &:nth-last-child(-n + 2) {
-            grid-column: 1/3;
-          }
-          &:last-child {
-            grid-column: 3/5;
+    }
+    .content {
+      background: var(--white);
+      width: 100%;
+      .optionList {
+        padding-block: 10px;
+        max-height: 85vh;
+        overflow-y: auto;
+        li {
+          color: var(--black2);
+          background: var(--white);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 11.2vw;
+          font-size: 4.2vw;
+          padding-inline: 20px;
+          > i {
+            font-size: 4.2vw;
+            opacity: 0;
+            pointer-events: none;
           }
           &:active,
           &.active {
-            color: var(--white);
-            background: #324fb1;
-            border: none;
+            color: var(--pri);
+
+            > i {
+              opacity: 1;
+            }
           }
         }
       }
-      .btnBlock {
+      // 組件
+      .dateWrap {
+        background: var(--white);
+        height: 97px;
+        padding-top: 20px;
+        padding-inline: 12px;
+        &__text {
+          color: var(--pri);
+          font-size: 3.7vw;
+          text-align: center;
+        }
+        &__section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 3vw;
+
+          > span {
+            color: var(--black2);
+            font-size: 3.7vw;
+          }
+        }
+        &__input {
+          background: var(--white);
+          border: 1px solid var(--gray3);
+          display: flex;
+          align-items: center;
+          width: 45%;
+          height: 34px;
+          border-radius: 5px;
+          position: relative;
+          > i {
+            color: var(--pri);
+            font-size: 4.2vw;
+            position: absolute;
+            left: 11px;
+            > i {
+              font-size: inherit;
+            }
+          }
+          > input {
+            color: var(--black2);
+            width: 100%;
+            height: 100%;
+            font-size: 4.2vw;
+            padding-left: 37px;
+            border-radius: 0.8vw;
+            &:focus {
+              border: 1px solid var(--pri);
+            }
+
+            &.error {
+              color: var(--error);
+              border: 1px solid var(--error);
+            }
+          }
+        }
+      }
+      // 組件
+      .operateWrap {
+        background: var(--white);
+        height: 20vw;
+        border-top-left-radius: 2vw;
+        border-top-right-radius: 2vw;
+        padding-top: 5.3vw;
+        padding-inline: 3.2vw;
         display: flex;
         gap: 2vw;
-        button {
+        box-shadow: 0 -0.8vw 1.6vw #00000008;
+        > button {
           @include style.btnStyle_base;
           width: 100%;
           &.del {
@@ -525,65 +369,251 @@ dialog {
             background: var(--white);
             color: var(--error);
             border: 0.2vw solid var(--error);
+            font-size: 4.2vw;
             i {
               font-size: 5.3vw;
             }
           }
         }
       }
-    }
-    // 組件
-    .noDataWrap {
-      background: var(--gray6);
-      height: 50vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      > i {
-        color: var(--gray3);
-        font-size: 20vw;
-        margin-top: 8vw;
-        margin-bottom: 4vw;
-      }
-      > p {
-        color: var(--black2);
-        font-size: 4.2vw;
-        font-weight: bold;
-        text-align: center;
-      }
-    }
-    // 組件
-    .msgWrap {
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-inline: 20px;
-      padding-bottom: 20px;
-      margin: 2vw 0;
-      > p {
-        color: var(--black2);
-        line-height: 1.2;
-        padding: 15px 0;
-        font-size: 4.5vw;
-      }
-
-      .btnBox {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        > button {
-          width: 50%;
-          margin-right: 10px;
-          &:first-child {
-            @include style.btnStyle_base;
-            color: var(--black2);
-            background: #d7d7d7;
+      // 組件
+      .cartList {
+        padding: 2vw;
+        background: var(--gray6);
+        height: 100%;
+        padding-bottom: 50vw;
+        overflow-y: scroll;
+        .cartItem {
+          background: var(--white);
+          border-radius: 1.6vw;
+          box-shadow: 0 0.8vw 1.6vw #00000029;
+          overflow: hidden;
+          margin-bottom: 2.6vw;
+          height: 31vw;
+          > div {
+            padding: 2.6vw 3.5vw;
+            display: flex;
+            align-items: center;
+            &.num {
+              float: left;
+              height: 65%;
+              justify-content: center;
+              font-size: 6vw;
+              font-weight: bold;
+              color: #8396d0;
+              padding-right: 0;
+            }
+            &.top {
+              justify-content: space-between;
+              height: 30%;
+              .icon {
+                display: flex;
+                align-items: center;
+                gap: 2vw;
+                i {
+                  background: linear-gradient(var(--sec), var(--sec-dark));
+                  border-radius: 2.4vw;
+                  width: 6.6vw;
+                  height: 6.9vw;
+                  font-size: 5.6vw;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+              > i {
+                color: var(--error);
+              }
+            }
+            &.middle {
+              justify-content: space-evenly;
+              font-size: 4.2vw;
+              font-weight: bold;
+              padding: 2vw 0;
+              height: 40%;
+              div {
+                &.center {
+                  text-align: center;
+                  font-size: 3.2vw;
+                  font-weight: normal;
+                  .vs {
+                    font-size: 3.7vw;
+                    color: var(--sec-dark);
+                    margin-bottom: 1vw;
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+            &.bottom {
+              height: 30%;
+              background: linear-gradient(90deg, var(--pri), var(--pri-2));
+              justify-content: space-between;
+              color: var(--white);
+            }
           }
-
-          &:last-child {
+        }
+      }
+      // 組件
+      .carttitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #646ccb;
+        margin-top: 1vw;
+        color: var(--white);
+        padding: 1.6vw;
+        font-size: 4.7vw;
+        font-weight: bold;
+        gap: 2vw;
+        border-radius: 2.6vw 2.6vw 0 0;
+        .num {
+          width: 7vw;
+          height: 7vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--sec-dark);
+          color: var(--black2);
+          border-radius: 2.6vw;
+        }
+      }
+      // 組件
+      .cartDetail {
+        background: var(--white);
+        height: 38vw;
+        border-radius: 2vw 2vw 0 0;
+        padding: 2vw 3.2vw;
+        box-shadow: 0 -0.8vw 1.6vw #00000008;
+        .detailItem {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.8vw 0;
+          &.win {
+            font-weight: bold;
+            p:last-child {
+              width: 60%;
+              font-size: 4.8vw;
+              color: var(--success);
+              text-align: right;
+            }
+          }
+          input {
+            padding: 1.8vw 3.2vw;
+            text-align: right;
+            border: 0.2vw solid var(--gray3);
+            border-radius: 1.6vw;
+            font-size: 4.2vw;
+            font-weight: bold;
+            width: 60%;
+            &:focus {
+              border: 1px solid var(--pri);
+            }
+            &.error {
+              color: var(--error);
+              border: 1px solid var(--error);
+            }
+          }
+        }
+        .detailBtn {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5vw;
+          button {
+            font-size: 3.7vw;
+            padding: 1.5vw 0;
+            border: 0.2vw solid #9aa0bf;
+            color: #9aa0bf;
+            border-radius: 1.6vw;
+            &:nth-last-child(-n + 2) {
+              grid-column: 1/3;
+            }
+            &:last-child {
+              grid-column: 3/5;
+            }
+            &:active,
+            &.active {
+              color: var(--white);
+              background: #324fb1;
+              border: none;
+            }
+          }
+        }
+        .btnBlock {
+          display: flex;
+          gap: 2vw;
+          button {
             @include style.btnStyle_base;
-            margin-right: 0;
+            width: 100%;
+            &.del {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 60%;
+              background: var(--white);
+              color: var(--error);
+              border: 0.2vw solid var(--error);
+              i {
+                font-size: 5.3vw;
+              }
+            }
+          }
+        }
+      }
+      // 組件
+      .noDataWrap {
+        background: var(--gray6);
+        height: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > i {
+          color: var(--gray3);
+          font-size: 20vw;
+          margin-top: 8vw;
+          margin-bottom: 4vw;
+        }
+        > p {
+          color: var(--black2);
+          font-size: 4.2vw;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+      // 組件
+      .msgWrap {
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 20px;
+        padding-bottom: 20px;
+        margin: 2vw 0;
+        > p {
+          color: var(--black2);
+          line-height: 1.2;
+          padding: 15px 0;
+          font-size: 4.5vw;
+        }
+
+        .btnBox {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          > button {
+            width: 50%;
+            margin-right: 10px;
+            &:first-child {
+              @include style.btnStyle_base;
+              color: var(--black2);
+              background: #d7d7d7;
+            }
+
+            &:last-child {
+              @include style.btnStyle_base;
+              margin-right: 0;
+            }
           }
         }
       }
@@ -591,176 +621,177 @@ dialog {
   }
 }
 
-[theme="dark"] dialog {
-  background: var(--black2);
-  &[open] {
-    &::backdrop {
-      background: #00000080;
-    }
-  }
-  &.gamePopup {
-    .top {
-      background: var(--gray1);
-      color: var(--white);
-    }
-    .bottom {
-      .title {
-        .icon {
-          i {
-            background: linear-gradient(180deg, #fcde6d, #cea611);
-          }
-        }
-        input {
-          border: 0.2vw solid var(--unnamed-color-42444d);
-          &::placeholder {
-            color: var(--gray2);
-          }
-        }
+[theme="dark"] .filter {
+  background: #00000080;
+  .popup {
+    background: var(--black2);
+    &.gamePopup {
+      .top {
+        background: var(--gray1);
+        color: var(--white);
       }
-      .list {
-        .item {
-          background: var(--gray1);
-          color: var(--gray6);
-          div {
-            .remind {
-              background: var(--pri);
+      .bottom {
+        .title {
+          .icon {
+            i {
+              background: linear-gradient(180deg, #fcde6d, #cea611);
+            }
+          }
+          input {
+            border: 0.2vw solid var(--unnamed-color-42444d);
+            &::placeholder {
+              color: var(--gray2);
             }
           }
         }
-      }
-    }
-  }
-  .title {
-    background: var(--gray1);
-    &__name {
-      color: var(--white);
-    }
-    &__btn {
-      color: var(--gray2);
-    }
-    &__topNav {
-      > li {
-        color: var(--gray2);
-        &:active,
-        &.active {
-          color: var(--white);
-          border-bottom: 2px solid var(--pri);
-        }
-      }
-    }
-  }
-  .content {
-    background: var(--black2);
-    .optionList {
-      li {
-        color: var(--gray3);
-        background: var(--gray1);
-        &:active,
-        &.active {
-          color: var(--sec);
-        }
-      }
-    }
-    .dateWrap {
-      background: var(--black2);
-      background: var(--black2);
-      &__text {
-        color: var(--gray2);
-      }
-      &__section {
-        > span {
-          color: var(--black2);
-        }
-      }
-      &__input {
-        // background: var(--black2);
-        // border: 1px solid var(--unnamed-color-42444d);
-
-        > button {
-          color: var(--pri);
-        }
-
-        > input {
-          color: var(--white);
-          border: 1px solid var(--unnamed-color-42444d);
-          background: var(--black2);
-        }
-      }
-    }
-    .operateWrap {
-      background: var(--gray1);
-      > button {
-        background: linear-gradient(#1f3fac, #3c5edb);
-      }
-    }
-    .noDataWrap {
-      background: var(--black2);
-      > i {
-        color: var(--gray3);
-      }
-      > p {
-        color: var(--gray2);
-      }
-    }
-    .cartList {
-      background: var(--dark2);
-      .cartItem {
-        background: var(--gray1);
-        > div {
-          &.top {
-            .icon {
-              i {
-                background: linear-gradient(var(--sec), var(--sec-dark));
-                color: var(--black1);
+        .list {
+          .item {
+            background: var(--gray1);
+            color: var(--gray6);
+            div {
+              .remind {
+                background: var(--pri);
               }
             }
           }
-          &.middle {
-            div {
-              &.center {
-                .date {
-                  color: var(--gray2);
+        }
+      }
+    }
+    &.tipbg {
+      background: #00000080;
+    }
+    .title {
+      background: var(--gray1);
+      &__name {
+        color: var(--white);
+      }
+      &__btn {
+        color: var(--gray2);
+      }
+      &__topNav {
+        > li {
+          color: var(--gray2);
+          &:active,
+          &.active {
+            color: var(--white);
+            border-bottom: 2px solid var(--pri);
+          }
+        }
+      }
+    }
+    .content {
+      background: var(--black2);
+      .optionList {
+        li {
+          color: var(--gray3);
+          background: var(--gray1);
+          &:active,
+          &.active {
+            color: var(--sec);
+          }
+        }
+      }
+      .dateWrap {
+        background: var(--black2);
+        background: var(--black2);
+        &__text {
+          color: var(--gray2);
+        }
+        &__section {
+          > span {
+            color: var(--black2);
+          }
+        }
+        &__input {
+          // background: var(--black2);
+          // border: 1px solid var(--unnamed-color-42444d);
+
+          > button {
+            color: var(--pri);
+          }
+
+          > input {
+            color: var(--white);
+            border: 1px solid var(--unnamed-color-42444d);
+            background: var(--black2);
+          }
+        }
+      }
+      .operateWrap {
+        background: var(--gray1);
+        > button {
+          background: linear-gradient(#1f3fac, #3c5edb);
+        }
+      }
+      .noDataWrap {
+        background: var(--black2);
+        > i {
+          color: var(--gray3);
+        }
+        > p {
+          color: var(--gray2);
+        }
+      }
+      .cartList {
+        background: var(--dark2);
+        .cartItem {
+          background: var(--gray1);
+          > div {
+            &.top {
+              .icon {
+                i {
+                  background: linear-gradient(var(--sec), var(--sec-dark));
+                  color: var(--black1);
                 }
               }
             }
+            &.middle {
+              div {
+                &.center {
+                  .date {
+                    color: var(--gray2);
+                  }
+                }
+              }
+            }
+            &.bottom {
+              background: linear-gradient(90deg, #354c9f, #1d3176);
+              color: var(--white);
+            }
           }
-          &.bottom {
-            background: linear-gradient(90deg, #354c9f, #1d3176);
+        }
+      }
+      .cartDetail {
+        background: var(--gray1);
+        .detailItem {
+          input {
             color: var(--white);
+            background: var(--black2);
+            border: 0.2vw solid var(--unnamed-color-42444d);
+            &:focus {
+              border: 1px solid var(--pri);
+            }
+            &.error {
+              color: var(--error);
+              border: 1px solid var(--error);
+            }
+          }
+        }
+        .btnBlock {
+          button {
+            background: linear-gradient(#1f3fac, #3c5edb);
+            &.del {
+              background: var(--gray1);
+              color: var(--error);
+            }
           }
         }
       }
-    }
-    .cartDetail {
-      background: var(--gray1);
-      .detailItem {
-        input {
-          color: var(--white);
-          background: var(--black2);
-          border: 0.2vw solid var(--unnamed-color-42444d);
-          &:focus {
-            border: 1px solid var(--pri);
-          }
-          &.error {
-            color: var(--error);
-            border: 1px solid var(--error);
-          }
+      .msgWrap {
+        background: var(--gray1);
+        > p {
+          color: var(--gray3);
         }
-      }
-      .btnBlock {
-        button {
-          background: linear-gradient(#1f3fac, #3c5edb);
-          &.del {
-            background: var(--gray1);
-            color: var(--error);
-          }
-        }
-      }
-    }
-    .msgWrap {
-      background: var(--gray1);
-      > p {
-        color: var(--gray3);
       }
     }
   }
