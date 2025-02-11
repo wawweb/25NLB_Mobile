@@ -240,48 +240,57 @@ body {
 }
 
 :root {
-  --error-light: #FFF5F5;
-  --pri-light: #F1EFF9;
-  --gray4: #E6E9F1;
-  --gray1: #4B4F64;
-  --gray3: #D6D9E9;
-  --mask: #C2C5D680;
-  --black1: #1A1D29;
-  --error: #F14B66;
-  --pri: #405CBF;
+  --error-light: #fff5f5;
+  --pri-light: #f1eff9;
+  --gray4: #e6e9f1;
+  --gray1: #4b4f64;
+  --gray3: #d6d9e9;
+  --mask: #c2c5d680;
+  --black1: #1a1d29;
+  --error: #f14b66;
+  --pri: #405cbf;
   --black2: #282831;
-  --pri-2: #2340A2;
-  --pri-dark: #1F3890;
-  --gray6: #F8F8F8;
-  --gray5: #F2F3F5;
-  --sec-dark: #E6C54E;
-  --sec: #F8DE7C;
-  --white: #FFFFFF;
-  --gray2: #9AA0BF;
-  --success: #63BC39;
+  --pri-2: #2340a2;
+  --pri-dark: #1f3890;
+  --gray6: #f8f8f8;
+  --gray5: #f2f3f5;
+  --sec-dark: #e6c54e;
+  --sec: #f8de7c;
+  --white: #ffffff;
+  --gray2: #9aa0bf;
+  --success: #63bc39;
+  --fz: 0vw;
 }
 
 :root [theme=dark] {
-  --unnamed-color-42444d: #42444D;
-  --error-light: #FFF5F5;
-  --pri-light: #F1EFF9;
-  --gray4: #E6E9F1;
+  --unnamed-color-42444d: #42444d;
+  --error-light: #fff5f5;
+  --pri-light: #f1eff9;
+  --gray4: #e6e9f1;
   --gray1: #323543;
-  --gray3: #D6D9E9;
+  --gray3: #d6d9e9;
   --mask: #00000080;
   --black1: #222326;
-  --error: #F94562;
-  --pri: #4467E5;
+  --error: #f94562;
+  --pri: #4467e5;
   --black2: #282831;
-  --pri-2: #2340A2;
-  --pri-dark: #1F3890;
-  --gray6: #F8F8F8;
-  --gray5: #F2F3F5;
-  --sec-dark: #E6C54E;
-  --sec: #EEC736;
-  --white: #FFFFFF;
-  --gray2: #9AA0BF;
-  --success: #6BDB36;
+  --pri-2: #2340a2;
+  --pri-dark: #1f3890;
+  --gray6: #f8f8f8;
+  --gray5: #f2f3f5;
+  --sec-dark: #e6c54e;
+  --sec: #eec736;
+  --white: #ffffff;
+  --gray2: #9aa0bf;
+  --success: #6bdb36;
+}
+
+:root [fontSize=small] {
+  --fz: -1vw;
+}
+
+:root [fontSize=big] {
+  --fz: +1vw;
 }
 
 .topNav .news {
@@ -405,7 +414,7 @@ footer .navbar > a {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   line-height: 1.2;
 }
 footer .navbar > a > i {
@@ -429,7 +438,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   width: 100%;
   position: fixed;
   top: 0;
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   z-index: 99;
 }
 .topNav .marquee {
@@ -457,7 +466,7 @@ footer .navbar > a.active, footer .navbar > a.active {
 }
 .topNav .marquee i {
   color: var(--gray2);
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
 }
 .topNav nav {
   display: -webkit-box;
@@ -481,7 +490,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2.3vw 4vw;
+  padding: 2.3vw 3vw;
   border-radius: 1.6vw;
   gap: 3vw;
   color: var(--black2);
@@ -526,7 +535,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   border-radius: 1.6vw;
   padding: 0;
   gap: 2vw;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   font-weight: bold;
   position: relative;
   -webkit-box-shadow: inset 0 0.8vw 1.6vw rgba(0, 0, 0, 0.1607843137);
@@ -557,11 +566,11 @@ footer .navbar > a.active, footer .navbar > a.active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
 }
 .topNav .title {
   background: var(--white);
-  font-size: 5.3vw;
+  font-size: calc(5.3vw + var(--fz));
   font-weight: bold;
   text-align: center;
   padding: 2.6vw 0;
@@ -616,7 +625,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 .innerNav > div.title {
   height: 11.2vw;
@@ -631,7 +640,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   color: var(--pri);
   border: 0.2vw solid var(--pri);
   border-radius: 2.65vw;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 .innerNav > div.dateList button:active, .innerNav > div.dateList button.active {
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri-2)), to(var(--pri)));
@@ -640,7 +649,7 @@ footer .navbar > a.active, footer .navbar > a.active {
 }
 .innerNav > div.dateList button.customize {
   padding: 0.4vw 1.5vw;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -691,9 +700,12 @@ footer .navbar > a.active, footer .navbar > a.active {
 .innerNav > div.detail > div p {
   margin-top: 1vw;
   line-height: 4.5vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .innerNav > div.detail > div p:first-child {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 .innerNav > div.detail > div p:last-child {
   font-weight: bolder;
@@ -717,7 +729,7 @@ footer .navbar > a.active, footer .navbar > a.active {
           align-items: center;
   height: 11.2vw;
   padding: 0 4.1vw;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   position: relative;
   color: var(--gray2);
 }
@@ -758,7 +770,7 @@ footer .navbar > a.active, footer .navbar > a.active {
 }
 .settingNav .title > h2 {
   color: var(--black2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 
 .settingInnerNav {
@@ -780,7 +792,7 @@ footer .navbar > a.active, footer .navbar > a.active {
   height: 11.2vw;
 }
 .settingInnerNav div.title {
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   position: relative;
 }
 .settingInnerNav div.title i {
@@ -1060,7 +1072,7 @@ main.home > section.listItem > div.title, main.innerPage > section.listItem > di
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 5.3vw;
+  font-size: calc(5.3vw + var(--fz));
   gap: 2.5vw;
   position: relative;
 }
@@ -1121,7 +1133,7 @@ main.home > section.listItem > div.title .medals.other, main.innerPage > section
 }
 main.home > section.listItem > div.team, main.innerPage > section.listItem > div.team {
   height: 11.75vw;
-  padding: 0.5vw 4.25vw;
+  padding: 0.5vw 3.5vw;
   border-radius: 1.6vw;
   background: -webkit-gradient(linear, left top, right top, from(var(--pri)), to(var(--pri-2)));
   background: linear-gradient(90deg, var(--pri), var(--pri-2));
@@ -1147,7 +1159,7 @@ main.home > section.listItem > div.team.start > div.left .host, main.innerPage >
   background: var(--sec-dark);
 }
 main.home > section.listItem > div.team.start > div.center, main.innerPage > section.listItem > div.team.start > div.center {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 main.home > section.listItem > div.team.start > div.center .vs, main.innerPage > section.listItem > div.team.start > div.center .vs {
   color: var(--white);
@@ -1158,7 +1170,7 @@ main.home > section.listItem > div.team.start > div.right i, main.innerPage > se
 main.home > section.listItem > div.team > div, main.innerPage > section.listItem > div.team > div {
   width: 40%;
   height: 100%;
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1176,7 +1188,7 @@ main.home > section.listItem > div.team > div.left, main.innerPage > section.lis
 main.home > section.listItem > div.team > div.left .host, main.innerPage > section.listItem > div.team > div.left .host {
   text-align: center;
   position: absolute;
-  font-size: 3vw;
+  font-size: calc(3vw + var(--fz));
   top: -0.5vw;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -1198,12 +1210,12 @@ main.home > section.listItem > div.team > div.center, main.innerPage > section.l
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 3.2vw;
-  width: 20%;
+  font-size: calc(3.2vw + var(--fz));
+  width: 22%;
   text-align: center;
 }
 main.home > section.listItem > div.team > div.center .vs, main.innerPage > section.listItem > div.team > div.center .vs {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   color: var(--sec);
 }
 main.home > section.listItem > div.team > div.right, main.innerPage > section.listItem > div.team > div.right {
@@ -1217,7 +1229,7 @@ main.home > section.listItem > div.team > div.right i, main.innerPage > section.
   font-size: 5vw;
   color: var(--pri);
   top: 50%;
-  right: 0;
+  right: -2vw;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -1256,7 +1268,7 @@ main.home > section.listItem > div.content section .list, main.innerPage > secti
 main.home > section.listItem > div.content section .list .item, main.innerPage > section.listItem > div.content section .list .item {
   padding: 2vw 1.5vw;
   width: 50%;
-  height: 12vw;
+  height: 14vw;
   text-align: right;
   border-right: 0.2vw solid var(--gray2);
   background: -webkit-gradient(linear, left top, left bottom, from(#dbdbe0), color-stop(8%, #fcfcfd), color-stop(84%, var(--white)), to(#c7c9d6));
@@ -1281,7 +1293,7 @@ main.home > section.listItem > div.content section .list .item:active p, main.ho
 }
 main.home > section.listItem > div.content section .list .item p, main.innerPage > section.listItem > div.content section .list .item p {
   color: #282831;
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   font-weight: bold;
   -moz-text-align-last: left;
        text-align-last: left;
@@ -1302,7 +1314,7 @@ main.home > section.listItem > div.content section .list .item .num, main.innerP
 }
 main.home > section.listItem > div.content section .list .item .num p, main.innerPage > section.listItem > div.content section .list .item .num p {
   position: relative;
-  font-size: 4.5vw;
+  font-size: calc(4.5vw + var(--fz));
 }
 main.home > section.listItem > div.content section .list .item .num p.up, main.innerPage > section.listItem > div.content section .list .item .num p.up {
   color: var(--success);
@@ -1333,7 +1345,7 @@ main.home > section.listItem > div.content section .list .item .num p.triangle::
   height: 2.5vw;
 }
 main.home > section.listItem > div.content section .list .item .num p.percent, main.innerPage > section.listItem > div.content section .list .item .num p.percent {
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   -ms-flex-item-align: end;
       align-self: flex-end;
   background: var(--success);
@@ -1352,7 +1364,7 @@ main.home > section.listItem > div.content a, main.innerPage > section.listItem 
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3vw;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   width: 100%;
   height: 9.6vw;
   border-radius: 1.6vw;
@@ -1381,7 +1393,7 @@ main.innerPage.display {
   display: block;
 }
 main.otherPage {
-  padding-top: 38.5vw;
+  padding-top: 39.5vw;
   padding-bottom: 16vw;
   background: var(--gray5);
 }
@@ -1412,7 +1424,7 @@ main.otherPage .noteList .noteItem > div {
 }
 main.otherPage .noteList .noteItem > div.title {
   gap: 2vw;
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 main.otherPage .noteList .noteItem > div.title i {
   width: 7vw;
@@ -1448,14 +1460,14 @@ main.otherPage .noteList .noteItem > div.team div {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: bold;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 main.otherPage .noteList .noteItem > div.team div .vs {
   color: var(--sec-dark);
 }
 main.otherPage .noteList .noteItem > div.team div .time {
   font-weight: normal;
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 main.otherPage .noteList .noteItem > div.num {
   -webkit-box-pack: justify;
@@ -1468,7 +1480,7 @@ main.otherPage .noteList .noteItem > div.num {
   border-radius: 1.6vw;
 }
 main.otherPage .noteList .noteItem > div.num p {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   line-height: 150%;
 }
 main.otherPage .noteList .noteItem > div.content {
@@ -1497,7 +1509,7 @@ main.otherPage .noteList .noteItem > div.content .info .money {
   font-weight: bold;
 }
 main.otherPage .noteList .noteItem > div.content .info p {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1533,7 +1545,7 @@ main.otherPage .noData div {
   border-radius: 1.6vw;
   -webkit-box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.1607843137);
           box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.1607843137);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1574,7 +1586,7 @@ main.settingPage .settings a {
 }
 main.settingPage .settings li > p,
 main.settingPage .settings a > p {
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   margin-right: auto;
 }
 main.settingPage .settings li > i:first-child,
@@ -1607,7 +1619,7 @@ main.settingPage .settings .styleSw > button {
   background: transparent;
   width: 100%;
   border-radius: 10px;
-  font-size: 3.733vw;
+  font-size: calc(3.7vw + var(--fz));
   margin-right: 2px;
 }
 main.settingPage .settings .styleSw > button:last-child {
@@ -1620,7 +1632,7 @@ main.settingPage .settings .styleSw > button:active, main.settingPage .settings 
 main.settingPage .settings .count {
   color: var(--white);
   background: var(--pri-dark);
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   border-radius: 12px;
   padding: 5px;
 }
@@ -1631,7 +1643,7 @@ main.settingInnerPage section.rule {
   background: var(--white);
   height: 100%;
   padding: 3.7vw 3.2vw;
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 main.settingInnerPage section.post .postItem {
   padding: 3.2vw;
@@ -1649,16 +1661,16 @@ main.settingInnerPage section.post .postItem .title {
       -ms-flex-align: center;
           align-items: center;
   font-weight: bolder;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 main.settingInnerPage section.post .postItem .title .date {
   font-weight: normal;
   color: var(--gray2);
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
 }
 main.settingInnerPage section.post .postItem .content {
   margin-top: 2.6vw;
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   line-height: 5vw;
 }
 
@@ -1802,7 +1814,7 @@ main.settingInnerPage section.post .postItem .content {
   height: 100%;
   color: var(--white);
   font-weight: bold;
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1842,7 +1854,7 @@ main.settingInnerPage section.post .postItem .content {
   height: 4vw;
   position: absolute;
   bottom: 0;
-  font-size: 3vw;
+  font-size: calc(3vw + var(--fz));
   border-radius: 0.5vw;
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri)), to(var(--pri-2)));
   background: linear-gradient(180deg, var(--pri), var(--pri-2));
@@ -1851,14 +1863,14 @@ main.settingInnerPage section.post .postItem .content {
 }
 .gamePage .top .team > div.center {
   padding-bottom: 3vw;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   width: 20%;
 }
 .gamePage .top .team > div.center .vs {
-  font-size: 4vw;
+  font-size: calc(4vw + var(--fz));
   color: var(--sec);
 }
 .gamePage .top .video {
@@ -1899,7 +1911,7 @@ main.settingInnerPage section.post .postItem .content {
 .gamePage .bottom > div.teamList .title p {
   color: var(--black2);
   font-weight: bold;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 .gamePage .bottom > div.teamList .title i {
   color: var(--gray2);
@@ -1917,12 +1929,12 @@ main.settingInnerPage section.post .postItem .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 5.3vw;
+  font-size: calc(5.3vw + var(--fz));
   font-weight: bold;
   margin-bottom: 1vw;
 }
 .gamePage .bottom > div.teamList .content > div.total ul li:first-child {
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 .gamePage .bottom > div.teamList .content > div.total ul li > div {
   width: 33%;
@@ -1974,7 +1986,7 @@ main.settingInnerPage section.post .postItem .content {
 .gamePage .bottom .list .item {
   padding: 2vw 1.5vw;
   width: 50%;
-  height: 12vw;
+  height: 14vw;
   text-align: right;
   border-right: 0.2vw solid var(--gray2);
   background: -webkit-gradient(linear, left top, left bottom, from(#dbdbe0), color-stop(8%, #fcfcfd), color-stop(84%, var(--white)), to(#c7c9d6));
@@ -1998,7 +2010,7 @@ main.settingInnerPage section.post .postItem .content {
   color: #fff !important;
 }
 .gamePage .bottom .list .item p {
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   font-weight: bold;
   -moz-text-align-last: left;
        text-align-last: left;
@@ -2019,7 +2031,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .gamePage .bottom .list .item .num p {
   position: relative;
-  font-size: 4.5vw;
+  font-size: calc(4.5vw + var(--fz));
 }
 .gamePage .bottom .list .item .num p.up {
   color: var(--success);
@@ -2050,7 +2062,7 @@ main.settingInnerPage section.post .postItem .content {
   height: 2.5vw;
 }
 .gamePage .bottom .list .item .num p.percent {
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   -ms-flex-item-align: end;
       align-self: flex-end;
   background: var(--success);
@@ -2121,19 +2133,19 @@ main.settingInnerPage section.post .postItem .content {
 .errpg .statusCode {
   text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   color: var(--pri);
-  font-size: 16vw;
+  font-size: calc(16vw + var(--fz));
   font-weight: bold;
   margin-bottom: 6.4vw;
 }
 .errpg .msg {
   color: var(--sec-dark);
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   font-weight: bold;
   margin-bottom: 6.4vw;
 }
 .errpg .text {
   color: var(--black2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   margin-bottom: 8vw;
 }
@@ -2143,7 +2155,7 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(var(--pri-2), var(--pri));
   height: 44px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: calc(4vw + var(--fz));
   width: 260px;
 }
 .errpg button:active, .errpg button.active {
@@ -2266,7 +2278,7 @@ main.settingInnerPage section.post .postItem .content {
       -ms-flex-pack: center;
           justify-content: center;
   color: var(--black2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   z-index: 99;
 }
@@ -2318,7 +2330,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup.gamePopup .bottom .title .icon p {
   font-weight: bold;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
 }
 .filter .popup.gamePopup .bottom .title input {
@@ -2385,7 +2397,7 @@ main.settingInnerPage section.post .postItem .content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
 }
 .filter .popup.gamePopup .bottom .list .item div .fav {
   width: 8vw;
@@ -2446,12 +2458,12 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup .title__name {
   color: var(--black2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   margin-inline: auto;
 }
 .filter .popup .title__btn {
   color: var(--gray2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   position: absolute;
 }
 .filter .popup .title__btn > i {
@@ -2513,7 +2525,7 @@ main.settingInnerPage section.post .postItem .content {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 11.2vw;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw var(--fz));
   padding-inline: 20px;
 }
 .filter .popup .content .optionList li > i {
@@ -2535,7 +2547,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup .content .dateWrap__text {
   color: var(--pri);
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   text-align: center;
 }
 .filter .popup .content .dateWrap__section {
@@ -2552,7 +2564,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup .content .dateWrap__section > span {
   color: var(--black2);
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
 }
 .filter .popup .content .dateWrap__input {
   background: var(--white);
@@ -2581,7 +2593,7 @@ main.settingInnerPage section.post .postItem .content {
   color: var(--black2);
   width: 100%;
   height: 100%;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   padding-left: 37px;
   border-radius: 0.8vw;
 }
@@ -2612,7 +2624,7 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(var(--pri-2), var(--pri));
   height: 44px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: calc(4vw + var(--fz));
   width: 100%;
 }
 .filter .popup .content .operateWrap > button:active, .filter .popup .content .operateWrap > button.active {
@@ -2632,7 +2644,7 @@ main.settingInnerPage section.post .postItem .content {
   background: var(--white);
   color: var(--error);
   border: 0.2vw solid var(--error);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
 }
 .filter .popup .content .operateWrap > button.del i {
   font-size: 5.3vw;
@@ -2668,7 +2680,7 @@ main.settingInnerPage section.post .postItem .content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 6vw;
+  font-size: calc(6vw + var(--fz));
   font-weight: bold;
   color: #8396d0;
   padding-right: 0;
@@ -2712,18 +2724,18 @@ main.settingInnerPage section.post .postItem .content {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   padding: 2vw 0;
   height: 40%;
 }
 .filter .popup .content .cartList .cartItem > div.middle div.center {
   text-align: center;
-  font-size: 3.2vw;
+  font-size: calc(3.2vw + var(--fz));
   font-weight: normal;
 }
 .filter .popup .content .cartList .cartItem > div.middle div.center .vs {
-  font-size: 3.7vw;
+  font-size: calc(3.7vw + var(--fz));
   color: var(--sec-dark);
   margin-bottom: 1vw;
   font-weight: bold;
@@ -2751,7 +2763,7 @@ main.settingInnerPage section.post .postItem .content {
   margin-top: 1vw;
   color: var(--white);
   padding: 1.6vw;
-  font-size: 4.7vw;
+  font-size: calc(4.7vw + var(--fz));
   font-weight: bold;
   gap: 2vw;
   border-radius: 2.6vw 2.6vw 0 0;
@@ -2797,7 +2809,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup .content .cartDetail .detailItem.win p:last-child {
   width: 60%;
-  font-size: 4.8vw;
+  font-size: calc(4.8vw + var(--fz));
   color: var(--success);
   text-align: right;
 }
@@ -2806,7 +2818,7 @@ main.settingInnerPage section.post .postItem .content {
   text-align: right;
   border: 0.2vw solid var(--gray3);
   border-radius: 1.6vw;
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   width: 60%;
 }
@@ -2825,8 +2837,8 @@ main.settingInnerPage section.post .postItem .content {
   gap: 1.5vw;
 }
 .filter .popup .content .cartDetail .detailBtn button {
-  font-size: 3.7vw;
-  padding: 1.5vw 0;
+  font-size: calc(3.7vw + var(--fz));
+  padding: 1vw 0;
   border: 0.2vw solid #9aa0bf;
   color: #9aa0bf;
   border-radius: 1.6vw;
@@ -2858,7 +2870,7 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(var(--pri-2), var(--pri));
   height: 44px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: calc(4vw + var(--fz));
   width: 100%;
 }
 .filter .popup .content .cartDetail .btnBlock button:active, .filter .popup .content .cartDetail .btnBlock button.active {
@@ -2904,7 +2916,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 .filter .popup .content .noDataWrap > p {
   color: var(--black2);
-  font-size: 4.2vw;
+  font-size: calc(4.2vw + var(--fz));
   font-weight: bold;
   text-align: center;
 }
@@ -2928,7 +2940,7 @@ main.settingInnerPage section.post .postItem .content {
   color: var(--black2);
   line-height: 1.2;
   padding: 15px 0;
-  font-size: 4.5vw;
+  font-size: calc(4.5vw + var(--fz));
 }
 .filter .popup .content .msgWrap .btnBox {
   display: -webkit-box;
@@ -2949,7 +2961,7 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(var(--pri-2), var(--pri));
   height: 44px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: calc(4vw + var(--fz));
   color: var(--black2);
   background: #d7d7d7;
 }
@@ -2962,7 +2974,7 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(var(--pri-2), var(--pri));
   height: 44px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: calc(4vw + var(--fz));
   margin-right: 0;
 }
 .filter .popup .content .msgWrap .btnBox > button:last-child:active, .filter .popup .content .msgWrap .btnBox > button:last-child.active {
@@ -3124,7 +3136,7 @@ html body {
   color: var(--black1);
   background: var(--gray6);
   position: relative;
-  font-size: 4vw;
+  font-size: calc(4vw + var(--fz));
 }
 html body main {
   width: 100%;

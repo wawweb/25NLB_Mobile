@@ -60,6 +60,7 @@ const filter = document.querySelector(".filter")
 
 // // 關閉彈窗
 ;(() => {
+  if (!filter) return
   const closes = filter.querySelectorAll("button.close")
   if (!closes) return
   closes.forEach((close) => {
@@ -87,6 +88,7 @@ const filter = document.querySelector(".filter")
 })()
 // // 清空購物車
 ;(() => {
+  if (!filter) return
   const del = filter.querySelector(".popup.cart .cartDetail button.del")
   if (!del) return
   del.addEventListener("click", () => {
@@ -96,14 +98,15 @@ const filter = document.querySelector(".filter")
 })()
 // // 送出購物車
 ;(() => {
+  if (!filter) return
   const submit = filter.querySelector(".cart .cartDetail button.submit")
   if (!submit) return
   submit.addEventListener("click", () => {
     const value = filter.querySelector(".cart .cartDetail input").value
     if (value > 100) {
-      filter.querySelector(".tip--default").classList.add('display')
+      filter.querySelector(".tip--default").classList.add("display")
     } else if (value <= 100) {
-      filter.querySelector(".tip--secondary").classList.add('display')
+      filter.querySelector(".tip--secondary").classList.add("display")
     }
   })
 })()
@@ -140,13 +143,14 @@ const filter = document.querySelector(".filter")
       const id = this.dataset.nav
       const gamePopup = filter.querySelector(`.gamePopup[data-game=${id}]`)
       if (!gamePopup) return
-      filter.classList.add('display')
-      gamePopup.classList.add('display')
+      filter.classList.add("display")
+      gamePopup.classList.add("display")
     })
   )
 })()
 // // 球類切換
 ;(() => {
+  if (!filter) return
   const gamePopup = filter.querySelectorAll(".gamePopup .list")
   if (!gamePopup) return
   gamePopup.forEach((item) =>
@@ -167,21 +171,22 @@ const filter = document.querySelector(".filter")
         })
         document.querySelector(`main.display`).classList.remove("display")
         document.querySelector(`main[data-main=${id}]`).classList.add("display")
-        filter.classList.remove('display')
-        open.classList.remove('display')
+        filter.classList.remove("display")
+        open.classList.remove("display")
       }
     })
   )
 })()
 // // 返回
 ;(() => {
+  if (!filter) return
   const back = filter.querySelectorAll(".gamePopup .top i")
   if (!back) return
   back.forEach((item) =>
     item.addEventListener("click", () => {
       const open = document.querySelector(".gamePopup.display")
-      filter.classList.remove('display')
-      open.classList.remove('display')
+      filter.classList.remove("display")
+      open.classList.remove("display")
     })
   )
 })()
@@ -194,8 +199,8 @@ const filter = document.querySelector(".filter")
     item.addEventListener("click", function () {
       const id = this.dataset.popup
       if (!id) return
-      filter.classList.add('display')
-      filter.querySelector(`.popup.${id}`).classList.add('display')
+      filter.classList.add("display")
+      filter.querySelector(`.popup.${id}`).classList.add("display")
     })
   )
 })()
@@ -223,14 +228,15 @@ const filter = document.querySelector(".filter")
       } else {
         const realTime = filter.querySelector(".popup.realTime")
         if (!realTime) return
-        filter.classList.add('display')
-        realTime.classList.add('display')
+        filter.classList.add("display")
+        realTime.classList.add("display")
       }
     })
   )
 })()
 // // 自訂義彈窗確認
 ;(() => {
+  if (!filter) return
   const submit = filter.querySelector(".popup.realTime .operateWrap button")
   if (!submit) return
   submit.addEventListener("click", () => {
@@ -250,45 +256,49 @@ const filter = document.querySelector(".filter")
       history.querySelector(".cus").classList.add("display")
       document.querySelector(".innerNav .detail .num").classList.remove("up")
     }
-    filter.classList.remove('display')
-    filter.querySelector(".popup.realTime").classList.remove('display')
+    filter.classList.remove("display")
+    filter.querySelector(".popup.realTime").classList.remove("display")
   })
 })()
 
 // // 提示彈窗 關閉
 ;(() => {
+  if (!filter) return
   const checks = filter.querySelectorAll(".tip button.checks")
   if (!checks) return
   checks.forEach((item) =>
     item.addEventListener("click", () => {
       const tip = filter.querySelector(".tip.display")
-      tip.classList.remove('display')
+      tip.classList.remove("display")
     })
   )
 })()
 ;(() => {
+  if (!filter) return
   const close = filter.querySelectorAll(".tip .title .tip_close")
   if (!close) return
   close.forEach((item) =>
     item.addEventListener("click", () => {
       const tip = filter.querySelector(".tip.display")
-      tip.classList.remove('display')
+      tip.classList.remove("display")
     })
   )
 })()
 // // 提示彈窗 送出
 ;(() => {
+  if (!filter) return
   const submit = filter.querySelector(".tip button.submit")
   if (!submit) return
   submit.addEventListener("click", () => {
     const dialogs = filter.querySelectorAll(".popup.display")
-    filter.classList.remove('display')
-    dialogs.forEach((item) => item.classList.remove('display'))
+    filter.classList.remove("display")
+    dialogs.forEach((item) => item.classList.remove("display"))
   })
 })()
 
-// // 購物車彈窗 單場/串關切換
+// 購物車彈窗 單場/串關切換
 ;(() => {
+  if (!filter) return
   const tabs = filter.querySelectorAll("#titleTopNavOptions li")
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", function () {
@@ -297,6 +307,38 @@ const filter = document.querySelector(".filter")
       const content = filter.querySelectorAll(".popup.cart .content")
       content.forEach((item) => item.classList.remove("display"))
       content[index].classList.add("display")
+    })
+  })
+})()
+
+// 字體大小
+;(() => {
+  const fontSizeSaved = sessionStorage.getItem("fontSize")
+  if (fontSizeSaved) {
+    body.setAttribute("fontSize", fontSizeSaved)
+    const fontSizeBtn = document.querySelector("aside .fontSizeControl")
+    if (!fontSizeBtn) return
+    fontSizeBtn.querySelector("div.active").classList.remove("active")
+    fontSizeBtn.querySelector(`div.${fontSizeSaved}`).classList.add("active")
+  }
+})()
+// 字體大小-按鈕
+;(() => {
+  const fontSizeBtn = document.querySelectorAll("aside .fontSizeControl div")
+  if (!fontSizeBtn) return
+  fontSizeBtn.forEach((item) => {
+    item.addEventListener("click", function () {
+      if (!this.classList.contains("close")) {
+        removeEv(fontSizeBtn, "active")
+        this.classList.add("active")
+        if (this.classList[0] !== "middle") {
+          sessionStorage.setItem("fontSize", `${this.classList[0]}`)
+          body.setAttribute("fontSize", `${this.classList[0]}`)
+        } else {
+          sessionStorage.removeItem("fontSize")
+          body.removeAttribute("fontSize")
+        }
+      }
     })
   })
 })()

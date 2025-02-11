@@ -17,7 +17,7 @@
         height: 100%;
         color: var(--white);
         font-weight: bold;
-        font-size: 4.8vw;
+        font-size:calc( 4.8vw + var(--fz));
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -40,7 +40,7 @@
           height: 4vw;
           position: absolute;
           bottom: 0;
-          font-size: 3vw;
+          font-size:calc( 3vw + var(--fz));
           border-radius: 0.5vw;
           background: linear-gradient(180deg, var(--pri), var(--pri-2));
           text-align: center;
@@ -48,11 +48,11 @@
         }
         &.center {
           padding-bottom: 3vw;
-          font-size: 3.2vw;
+          font-size:calc( 3.2vw + var(--fz));
           justify-content: flex-end;
           width: 20%;
           .vs {
-            font-size: 4vw;
+            font-size:calc( 4vw + var(--fz));
             color: var(--sec);
           }
         }
@@ -92,7 +92,7 @@
           p {
             color: var(--black2);
             font-weight: bold;
-            font-size: 4.2vw;
+            font-size:calc( 4.2vw + var(--fz));
           }
           i {
             color: var(--gray2);
@@ -108,11 +108,11 @@
                 margin-top: 2vw;
                 li {
                   display: flex;
-                  font-size: 5.3vw;
+                  font-size:calc( 5.3vw + var(--fz));
                   font-weight: bold;
                   margin-bottom: 1vw;
                   &:first-child {
-                    font-size: 4.2vw;
+                    font-size:calc( 4.2vw + var(--fz));
                   }
                   > div {
                     width: 33%;
@@ -160,7 +160,7 @@
       .item {
         padding: 2vw 1.5vw;
         width: 50%;
-        height: 12vw;
+        height: 14vw;
         text-align: right;
         border-right: 0.2vw solid var(--gray2);
         background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
@@ -178,7 +178,7 @@
           }
         }
         p {
-          font-size: 4.8vw;
+          font-size:calc( 4.8vw + var(--fz));
           font-weight: bold;
           text-align-last: left;
         }
@@ -191,7 +191,7 @@
           align-self: flex-end;
           p {
             position: relative;
-            font-size: 4.5vw;
+            font-size:calc( 4.5vw + var(--fz));
             &.up {
               color: var(--success);
               &.triangle {
@@ -223,7 +223,7 @@
               }
             }
             &.percent {
-              font-size: 3.2vw;
+              font-size:calc( 3.2vw + var(--fz));
               align-self: flex-end;
               background: var(--success);
               color: var(--white);
