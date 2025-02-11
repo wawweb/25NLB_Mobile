@@ -1199,6 +1199,13 @@ main.home > section.listItem > div.team > div.left .host, main.innerPage > secti
   border-radius: 0 0 2vw 2vw;
   padding: 0.5vw;
 }
+main.home > section.listItem > div.team > div.left p, main.innerPage > section.listItem > div.team > div.left p {
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
 main.home > section.listItem > div.team > div.center, main.innerPage > section.listItem > div.team > div.center {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1223,6 +1230,13 @@ main.home > section.listItem > div.team > div.right, main.innerPage > section.li
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+main.home > section.listItem > div.team > div.right p, main.innerPage > section.listItem > div.team > div.right p {
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
 }
 main.home > section.listItem > div.team > div.right i, main.innerPage > section.listItem > div.team > div.right i {
   position: absolute;

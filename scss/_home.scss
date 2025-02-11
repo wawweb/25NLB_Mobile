@@ -117,6 +117,13 @@ main {
                   border-radius: 0 0 2vw 2vw;
                   padding: 0.5vw;
                 }
+                p{
+                  width: 85%;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  text-align: center;
+                }
               }
               &.center {
                 flex-direction: column;
@@ -132,8 +139,14 @@ main {
               }
               &.right {
                 justify-content: center;
-                position: relative;
-                
+                position: relative; 
+                p{
+                  width: 85%;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  text-align: center;
+                }
                 i {
                   position: absolute;
                   font-size: 5vw;
