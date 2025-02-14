@@ -124,6 +124,18 @@
     position: absolute;
     left: 4.25vw;
   }
+  .videoMode {
+    font-size: calc(3vw + var(--fz));
+    position: absolute;
+    right: 5vw;
+    border: 0.1vw solid #fff;
+    padding: 1.2vw;
+    border-radius: 0.8vw;
+    display: none;
+    &.display{
+      display: block;
+    }
+  }
 }
 // 內頁
 .innerNav {

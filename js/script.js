@@ -342,3 +342,30 @@ const filter = document.querySelector(".filter")
     })
   })
 })()
+
+// 影片區塊
+;(() => {
+  const videoBtn = document.querySelector(".gamePage .top .video")
+  if (!videoBtn) return
+  videoBtn.addEventListener("click", (e) => {
+    console.log(e.target.tagName)
+    if (e.target.tagName === "I") {
+      const videomode_nav = document.querySelector(".innerGameNav .videoMode")
+      const videomode = document.querySelector(".gamePage .top")
+      if (!videomode_nav || !videomode) return
+      videomode_nav.classList.add("display")
+      videomode.classList.add("hide")
+    }
+  })
+})()
+// 影片區塊-返回
+;(() => {
+  const videomode_nav = document.querySelector(".innerGameNav .videoMode")
+  if (!videomode_nav) return
+  videomode_nav.addEventListener("click", (e) => {
+    e.target.classList.remove("display")
+    const videomode = document.querySelector(".gamePage .top")
+    if (!videomode) return
+    videomode.classList.remove("hide")
+  })
+})()

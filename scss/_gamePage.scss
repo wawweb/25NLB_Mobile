@@ -17,7 +17,7 @@
         height: 100%;
         color: var(--white);
         font-weight: bold;
-        font-size:calc( 4.8vw + var(--fz));
+        font-size: calc(4.8vw + var(--fz));
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -40,7 +40,7 @@
           height: 4vw;
           position: absolute;
           bottom: 0;
-          font-size:calc( 3vw + var(--fz));
+          font-size: calc(3vw + var(--fz));
           border-radius: 0.5vw;
           background: linear-gradient(180deg, var(--pri), var(--pri-2));
           text-align: center;
@@ -48,11 +48,11 @@
         }
         &.center {
           padding-bottom: 3vw;
-          font-size:calc( 3.2vw + var(--fz));
+          font-size: calc(3.2vw + var(--fz));
           justify-content: flex-end;
           width: 20%;
           .vs {
-            font-size:calc( 4vw + var(--fz));
+            font-size: calc(4vw + var(--fz));
             color: var(--sec);
           }
         }
@@ -62,6 +62,21 @@
       padding: 0 6vw;
       text-align: right;
       color: var(--gray4);
+    }
+    &.hide {
+      display: none;
+      & ~ .videoMode {
+        display: block;
+      }
+    }
+  }
+  .videoMode{
+    display: none;
+    padding-top: 11.2vw;
+    background: #2d2d2d;
+    .video{
+      height:46vw;
+      background: #2d2d2d;
     }
   }
   .bottom {
@@ -76,8 +91,8 @@
       }
       &.teamList {
         &.show {
-          .title{
-            i{
+          .title {
+            i {
               transform: rotate(0deg);
             }
           }
@@ -92,7 +107,7 @@
           p {
             color: var(--black2);
             font-weight: bold;
-            font-size:calc( 4.2vw + var(--fz));
+            font-size: calc(4.2vw + var(--fz));
           }
           i {
             color: var(--gray2);
@@ -108,11 +123,11 @@
                 margin-top: 2vw;
                 li {
                   display: flex;
-                  font-size:calc( 5.3vw + var(--fz));
+                  font-size: calc(5.3vw + var(--fz));
                   font-weight: bold;
                   margin-bottom: 1vw;
                   &:first-child {
-                    font-size:calc( 4.2vw + var(--fz));
+                    font-size: calc(4.2vw + var(--fz));
                   }
                   > div {
                     width: 33%;
@@ -135,11 +150,11 @@
             }
             &.list {
               margin-bottom: 1vw;
-              .item.active{
-                .num{
-                  .down.triangle{
+              .item.active {
+                .num {
+                  .down.triangle {
                     &::before {
-                      transition: all .5s;
+                      transition: all 0.5s;
                       background: linear-gradient(45deg, transparent 50%, var(--sec-dark) 50%);
                       transform: rotate(-45deg);
                       bottom: 0%;
@@ -178,7 +193,7 @@
           }
         }
         p {
-          font-size:calc( 4.8vw + var(--fz));
+          font-size: calc(4.8vw + var(--fz));
           font-weight: bold;
           text-align-last: left;
         }
@@ -191,7 +206,7 @@
           align-self: flex-end;
           p {
             position: relative;
-            font-size:calc( 4.5vw + var(--fz));
+            font-size: calc(4.5vw + var(--fz));
             &.up {
               color: var(--success);
               &.triangle {
@@ -223,7 +238,7 @@
               }
             }
             &.percent {
-              font-size:calc( 3.2vw + var(--fz));
+              font-size: calc(3.2vw + var(--fz));
               align-self: flex-end;
               background: var(--success);
               color: var(--white);

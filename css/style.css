@@ -605,6 +605,18 @@ footer .navbar > a.active, footer .navbar > a.active {
   position: absolute;
   left: 4.25vw;
 }
+.innerGameNav .videoMode {
+  font-size: calc(3vw + var(--fz));
+  position: absolute;
+  right: 5vw;
+  border: 0.1vw solid #fff;
+  padding: 1.2vw;
+  border-radius: 0.8vw;
+  display: none;
+}
+.innerGameNav .videoMode.display {
+  display: block;
+}
 
 .innerNav {
   position: fixed;
@@ -1891,6 +1903,21 @@ main.settingInnerPage section.post .postItem .content {
   padding: 0 6vw;
   text-align: right;
   color: var(--gray4);
+}
+.gamePage .top.hide {
+  display: none;
+}
+.gamePage .top.hide ~ .videoMode {
+  display: block;
+}
+.gamePage .videoMode {
+  display: none;
+  padding-top: 11.2vw;
+  background: #2d2d2d;
+}
+.gamePage .videoMode .video {
+  height: 46vw;
+  background: #2d2d2d;
 }
 .gamePage .bottom {
   padding: 0 3vw;
