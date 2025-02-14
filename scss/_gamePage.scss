@@ -70,12 +70,12 @@
       }
     }
   }
-  .videoMode{
+  .videoMode {
     display: none;
     padding-top: 11.2vw;
     background: #2d2d2d;
-    .video{
-      height:46vw;
+    .video {
+      height: 46vw;
       background: #2d2d2d;
     }
   }
@@ -88,6 +88,48 @@
       background: var(--gray5);
       &.topButton {
         margin-top: -3vw;
+        .videoInfo {
+          display: none;
+          border: 0.2vw solid var(--gray2);
+          border-radius: 1vw;
+          overflow: hidden;
+          > div {
+            padding: 2vw 1.5vw;
+            height: 14vw;
+            font-size: calc(4.8vw + var(--fz));
+            font-weight: bold;
+            border-right: 0.2vw solid var(--gray2);
+            background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
+            &.time {
+              width: 30%;
+            }
+            &.info {
+              display: flex;
+              width: 70%;
+              border: none;
+              background: linear-gradient(var(--pri), var(--pri-2));
+              color: #fff;
+              div {
+                width: 40%;
+                &.center {
+                  font-size: calc(4vw + var(--fz));
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 20%;
+                }
+                .num {
+                  font-size: calc(4vw + var(--fz));
+                  color: #2d2d2d;
+                  background: #fff;
+                  display: inline;
+                  padding: 0 1vw;
+                  border-radius: 0.8vw;
+                }
+              }
+            }
+          }
+        }
       }
       &.teamList {
         &.show {
@@ -246,6 +288,12 @@
               padding: 0.5vw 1vw;
             }
           }
+        }
+      }
+      &.hide {
+        display: none;
+        & ~ .videoInfo {
+          display: flex;
         }
       }
     }

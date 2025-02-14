@@ -352,9 +352,13 @@ const filter = document.querySelector(".filter")
     if (e.target.tagName === "I") {
       const videomode_nav = document.querySelector(".innerGameNav .videoMode")
       const videomode = document.querySelector(".gamePage .top")
-      if (!videomode_nav || !videomode) return
+      const videoInfo = document.querySelector(
+        ".gamePage .bottom .topButton .list"
+      )
+      if (!videomode_nav || !videomode || !videoInfo) return
       videomode_nav.classList.add("display")
       videomode.classList.add("hide")
+      videoInfo.classList.add("hide")
     }
   })
 })()
@@ -365,7 +369,11 @@ const filter = document.querySelector(".filter")
   videomode_nav.addEventListener("click", (e) => {
     e.target.classList.remove("display")
     const videomode = document.querySelector(".gamePage .top")
-    if (!videomode) return
+    const videoInfo = document.querySelector(
+      ".gamePage .bottom .topButton .list"
+    )
+    if (!videomode|| !videoInfo) return
     videomode.classList.remove("hide")
+    videoInfo.classList.remove("hide")
   })
 })()

@@ -1931,6 +1931,58 @@ main.settingInnerPage section.post .postItem .content {
 .gamePage .bottom > div.topButton {
   margin-top: -3vw;
 }
+.gamePage .bottom > div.topButton .videoInfo {
+  display: none;
+  border: 0.2vw solid var(--gray2);
+  border-radius: 1vw;
+  overflow: hidden;
+}
+.gamePage .bottom > div.topButton .videoInfo > div {
+  padding: 2vw 1.5vw;
+  height: 14vw;
+  font-size: calc(4.8vw + var(--fz));
+  font-weight: bold;
+  border-right: 0.2vw solid var(--gray2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#dbdbe0), color-stop(8%, #fcfcfd), color-stop(84%, var(--white)), to(#c7c9d6));
+  background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
+}
+.gamePage .bottom > div.topButton .videoInfo > div.time {
+  width: 30%;
+}
+.gamePage .bottom > div.topButton .videoInfo > div.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  border: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--pri)), to(var(--pri-2)));
+  background: linear-gradient(var(--pri), var(--pri-2));
+  color: #fff;
+}
+.gamePage .bottom > div.topButton .videoInfo > div.info div {
+  width: 40%;
+}
+.gamePage .bottom > div.topButton .videoInfo > div.info div.center {
+  font-size: calc(4vw + var(--fz));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20%;
+}
+.gamePage .bottom > div.topButton .videoInfo > div.info div .num {
+  font-size: calc(4vw + var(--fz));
+  color: #2d2d2d;
+  background: #fff;
+  display: inline;
+  padding: 0 1vw;
+  border-radius: 0.8vw;
+}
 .gamePage .bottom > div.teamList.show .title i {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -2110,6 +2162,14 @@ main.settingInnerPage section.post .postItem .content {
   color: var(--white);
   border-radius: 1.3vw;
   padding: 0.5vw 1vw;
+}
+.gamePage .bottom .list.hide {
+  display: none;
+}
+.gamePage .bottom .list.hide ~ .videoInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 [theme=dark] .gamePage {
