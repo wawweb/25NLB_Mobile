@@ -1947,13 +1947,13 @@ main.settingInnerPage section.post .postItem .content {
   background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
 }
 .gamePage .bottom > div.topButton .videoInfo > div.time {
-  width: 30%;
+  width: 20%;
 }
 .gamePage .bottom > div.topButton .videoInfo > div.info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
+  width: 80%;
   border: none;
   background: -webkit-gradient(linear, left top, left bottom, from(var(--pri)), to(var(--pri-2)));
   background: linear-gradient(var(--pri), var(--pri-2));
@@ -1961,18 +1961,22 @@ main.settingInnerPage section.post .postItem .content {
 }
 .gamePage .bottom > div.topButton .videoInfo > div.info div {
   width: 40%;
-}
-.gamePage .bottom > div.topButton .videoInfo > div.info div.center {
-  font-size: calc(4vw + var(--fz));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.gamePage .bottom > div.topButton .videoInfo > div.info div.center {
+  font-size: calc(4vw + var(--fz));
   width: 20%;
 }
 .gamePage .bottom > div.topButton .videoInfo > div.info div .num {
@@ -2187,6 +2191,18 @@ main.settingInnerPage section.post .postItem .content {
 }
 [theme=dark] .gamePage .bottom > div.teamList .content > div.total {
   color: var(--gray3);
+}
+[theme=dark] .gamePage .bottom > div.topButton .videoInfo {
+  border: none;
+}
+[theme=dark] .gamePage .bottom > div.topButton .videoInfo > div {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2d2d2d), color-stop(8%, #42434f), color-stop(84%, #42434f), to(#2d2d2d));
+  background: linear-gradient(180deg, #2d2d2d, #42434f 8%, #42434f 84%, #2d2d2d);
+  border: none;
+}
+[theme=dark] .gamePage .bottom > div.topButton .videoInfo > div.info {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--pri)), to(var(--pri-2)));
+  background: linear-gradient(var(--pri), var(--pri-2));
 }
 [theme=dark] .gamePage .bottom .list {
   border: none;

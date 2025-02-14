@@ -101,21 +101,22 @@
             border-right: 0.2vw solid var(--gray2);
             background: linear-gradient(180deg, #dbdbe0, #fcfcfd 8%, var(--white) 84%, #c7c9d6);
             &.time {
-              width: 30%;
+              width: 20%;
             }
             &.info {
               display: flex;
-              width: 70%;
+              width: 80%;
               border: none;
               background: linear-gradient(var(--pri), var(--pri-2));
               color: #fff;
               div {
                 width: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 &.center {
                   font-size: calc(4vw + var(--fz));
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
                   width: 20%;
                 }
                 .num {
@@ -323,6 +324,18 @@
           > div {
             &.total {
               color: var(--gray3);
+            }
+          }
+        }
+      }
+      &.topButton {
+        .videoInfo {
+          border: none;
+          > div {
+            background: linear-gradient(180deg, #2d2d2d, #42434f 8%, #42434f 84%, #2d2d2d);
+            border: none;
+            &.info {
+              background: linear-gradient(var(--pri), var(--pri-2));
             }
           }
         }
