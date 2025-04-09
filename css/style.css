@@ -3250,6 +3250,7 @@ main.settingInnerPage section.post .postItem .content {
 }
 
 html body {
+  min-height: 100vh;
   color: var(--black1);
   background: var(--gray6);
   position: relative;

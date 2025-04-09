@@ -8,8 +8,9 @@
 @use "./popup";
 
 html {
+  
   body {
-    // min-height: 100vh;
+    min-height: 100vh;
     color: var(--black1);
     background: var(--gray6); 
     position: relative;
@@ -31,7 +32,7 @@ html {
         "wght" 400,
         "GRAD" 0,
         "opsz" 24;
-    }
+    } 
   }
 }
 
