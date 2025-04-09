@@ -3281,3 +3281,9 @@ html body .material-symbols-rounded {
   color: var(--white);
   background: var(--black2);
 }
+
+@media (hover: none) {
+  html body {
+    margin-bottom: 8px;
+  }
+}
