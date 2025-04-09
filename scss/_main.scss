@@ -22,7 +22,7 @@ html {
       flex-direction: column;
       flex-grow: 1;
       transition: all 0.5s;
-      
+      overflow-y: auto;
     }
     .material-symbols-rounded {
       font-variation-settings:
@@ -37,12 +37,4 @@ html {
 [theme="dark"] {
   color: var(--white);
   background: var(--black2);
-}
-
-@media (hover: none) {
-  html {
-    body {
-      margin-bottom: 8px;
-    }
-  }
 }
