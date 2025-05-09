@@ -2,6 +2,33 @@
   .news {
     background: url("../img/svg/icon_news.svg") no-repeat center/contain;
   }
+  .gameNav{
+    i{
+      width: 5.5vw;
+      height: 5.5vw;
+      &.ft_icon{
+        background: url("../img/ball_icon/FT.png") no-repeat center/contain;
+      }
+      &.bk_icon{
+        background: url("../img/ball_icon/BK.png") no-repeat center/contain;
+      }
+      &.eb_icon{
+        background: url("../img/ball_icon/EB.png") no-repeat center/contain;
+      }
+      &.tn_icon{
+        background: url("../img/ball_icon/TN.png") no-repeat center/contain;
+      }
+      &.bs_icon{
+        background: url("../img/ball_icon/BS.png") no-repeat center/contain;
+      }
+      &.ib_icon{
+        background: url("../img/ball_icon/IB.png") no-repeat center/contain;
+      }
+      &.af_icon{
+        background: url("../img/ball_icon/AF.png") no-repeat center/contain;
+      }
+    }
+  }
 }
 // 彈窗
 .popup {

@@ -296,6 +296,31 @@ body {
 .topNav .news {
   background: url("../img/svg/icon_news.svg") no-repeat center/contain;
 }
+.topNav .gameNav i {
+  width: 5.5vw;
+  height: 5.5vw;
+}
+.topNav .gameNav i.ft_icon {
+  background: url("../img/ball_icon/FT.png") no-repeat center/contain;
+}
+.topNav .gameNav i.bk_icon {
+  background: url("../img/ball_icon/BK.png") no-repeat center/contain;
+}
+.topNav .gameNav i.eb_icon {
+  background: url("../img/ball_icon/EB.png") no-repeat center/contain;
+}
+.topNav .gameNav i.tn_icon {
+  background: url("../img/ball_icon/TN.png") no-repeat center/contain;
+}
+.topNav .gameNav i.bs_icon {
+  background: url("../img/ball_icon/BS.png") no-repeat center/contain;
+}
+.topNav .gameNav i.ib_icon {
+  background: url("../img/ball_icon/IB.png") no-repeat center/contain;
+}
+.topNav .gameNav i.af_icon {
+  background: url("../img/ball_icon/AF.png") no-repeat center/contain;
+}
 
 .popup .fav {
   background: url("../img/svg/like.svg") no-repeat center/contain;
